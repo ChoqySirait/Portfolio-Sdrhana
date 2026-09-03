@@ -14,12 +14,16 @@ export default function ResumePage() {
       <div className="space-y-8">
         <div className="p-8 bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-rose-200 transition-all duration-300">
           <span className="text-xs font-bold text-rose-600 font-mono bg-rose-50 px-3 py-1 rounded-full">
-            [TAHUN_MASUK - SEKARANG]
+            [2024 - SEKARANG]
           </span>
           <h2 className="text-xl font-bold text-slate-900 mt-4">S1 Sistem Informasi</h2>
           <p className="text-slate-600 text-sm font-semibold mt-1">Institut Teknologi Del</p>
           <p className="text-slate-500 text-xs mt-3 leading-relaxed">
-            [TULISKAN_PENCAPAIAN_KURSUS_ATAU_KEGIATAN_ORGANISASI_DI_SINI]
+            - Anggota Majelis Permusyawaratan Mahasiswa (MPM) February 2026 - Sekarang
+            - Abang Asuh (Mentor Mahasiswa Baru) Agustus 2025 - Mei 2026
+            
+            Untuk Lebih Jelas Terdapat pada CV
+            
           </p>
         </div>
       </div>

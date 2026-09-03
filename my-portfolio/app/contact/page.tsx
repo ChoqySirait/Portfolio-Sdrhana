@@ -14,7 +14,7 @@ export default function ContactPage() {
         </span>
         <h1 className="text-3xl sm:text-4xl font-extrabold mb-4">Mari Berdiskusi &amp; Bekerja Sama</h1>
         <p className="text-slate-400 text-sm max-w-md mx-auto mb-8 leading-relaxed">
-          Terbuka untuk proyek kolaborasi, diskusi teknologi, maupun peluang karir.
+          Terbuka untuk proyek kolaborasi, diskusi , maupun peluang karir
         </p>
 
         {/* Tautan Langsung Buka Tab Gmail Web */}

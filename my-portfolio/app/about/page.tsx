@@ -16,10 +16,10 @@ export default function AboutPage() {
       
       <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-rose-200 transition-all duration-300 space-y-5">
         <p className="text-slate-600 leading-relaxed text-base sm:text-lg">
-          Saya adalah mahasiswa Sistem Informasi di Institut Teknologi Del yang berfokus pada pengembangan perangkat lunak modern, analisis sistem, dan perancangan antarmuka pengguna.
+          Saya adalah mahasiswa Sistem Informasi di Institut Teknologi Del yang berfokus pada Manajemen data, Analisis sistem, Pemograman dan perancangan antarmuka pengguna.
         </p>
         <p className="text-slate-600 leading-relaxed text-base sm:text-lg">
-          [MASUKKAN_DESKRIPSI_TAMBAHAN_TENTANG_DIRIMU_DI_SINI]
+          Saat ini saya adalah mahasiswa semester 5 yang memiliki rasa keingintahuan terkait teknologi, lowongan pekerjaan dan lainnya.
         </p>
 
         <div className="pt-6 border-t border-slate-100 flex flex-wrap gap-4">

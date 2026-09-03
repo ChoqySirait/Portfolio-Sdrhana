@@ -20,24 +20,24 @@ export default function PortfolioPage() {
   const myProjects: ProjectItem[] = [
     {
       id: 1,
-      title: "Sistem Manajemen Kasir & Audit",
-      category: "Fullstack App",
-      description: "Aplikasi pencatatan pesanan dan pelacakan aktivitas transaksi kasir secara terintegrasi.",
+      title: "Sistem Manajemen Pengambilan Paket Berbasis Web/Mobile pada UMKM",
+      category: "Web",
+      description: "Aplikasi pencatatan dan pengambilan paket yang terintegrasi",
       tags: ["React", "Node.js", "Tailwind CSS"],
     },
     {
       id: 2,
-      title: "Platform Layanan Wisata Toba",
-      category: "UI/UX & Web",
+      title: "Prototype (UI/UX) Layanan Guide Travel dan Hotel (TRIPORIA) ",
+      category: "UI/UX",
       description: "Desain dan antarmuka web untuk pemesanan paket wisata daerah Samosir dan Danau Toba.",
-      tags: ["Next.js", "Figma", "Tailwind CSS"],
+      tags: ["Figma"],
     },
     {
       id: 3,
-      title: "Aplikasi To-Do List Interaktif",
-      category: "Frontend App",
-      description: "Manajemen tugas harian berbasis web dengan fitur penyaringan dan penyimpanan lokal.",
-      tags: ["React", "JavaScript"],
+      title: "Web To-Do List Interaktif (Nakama To Do List)",
+      category: "Web",
+      description: "Manajemen tugas harian berbasis web dengan fitur penyaringan dan penyimpanan lokal yang sederhana.",
+      tags: ["HTML", "JavaScript", "CSS"],
     },
   ];
 
@@ -50,7 +50,7 @@ export default function PortfolioPage() {
             PORTFOLIO
           </span>
         </div>
-        <h1 className="text-4xl font-extrabold text-slate-900">Proyek Pilihan</h1>
+        <h1 className="text-4xl font-extrabold text-slate-900">Proyek</h1>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

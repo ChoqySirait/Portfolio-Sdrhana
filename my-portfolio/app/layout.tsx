@@ -58,7 +58,7 @@ export default function RootLayout({
 
         {/* Footer Global */}
         <footer className="border-t border-slate-200 py-8 text-center text-xs text-slate-500 bg-white/50 mt-auto">
-          &copy; {new Date().getFullYear()} Choqy Pananda Sirait. Built with Next.js, React &amp; Tailwind CSS.
+          &copy; {new Date().getFullYear()} Choqy Pananda Sirait.
         </footer>
 
       </body>
