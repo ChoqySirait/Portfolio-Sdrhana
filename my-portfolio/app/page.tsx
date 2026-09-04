@@ -12,7 +12,7 @@ export default function HomePage() {
           <div className="flex items-center space-x-3 mb-4">
             <span className="w-8 h-0.5 bg-rose-600"></span>
             <span className="text-xs font-bold uppercase tracking-widest text-rose-600 font-mono">
-              [SYS_WELCOME // 01]
+              Hello
             </span>
           </div>
 

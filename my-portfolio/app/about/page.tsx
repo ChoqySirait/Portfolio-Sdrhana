@@ -2,9 +2,9 @@ import Link from 'next/link';
 
 export default function AboutPage() {
   const techStacks = [
-    { category: "Programming & Web", items: ["Java", "C", "JavaScript", "HTML5", "CSS3", "Next.js", "React", "Tailwind CSS"] },
-    { category: "Design & Prototyping", items: ["Figma", "UI/UX Design", "Wireframing", "User Research"] },
-    { category: "Core Competencies", items: ["System Analysis", "Database Management", "Object-Oriented Programming (OOP)", "Agile / Scrum"] },
+    { category: "Programming & Web", items: ["Java", "C", "JavaScript", "HTML5", "CSS3", "Next.js", "React", "Tailwind CSS", "Node"] },
+    { category: "Design & Prototyping", items: ["Figma", "UI/UX Design", "Wireframing", "User Research", "Bizagi", "Adobe", "Capcut"] },
+    { category: "Core Competencies", items: ["System Analysis", "Database Management", "Front-End", "BPMN"] },
   ];
 
   return (
@@ -25,7 +25,7 @@ export default function AboutPage() {
         <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-bl-full pointer-events-none"></div>
 
         <p className="text-slate-600 leading-relaxed text-base sm:text-lg font-medium">
-          Saya adalah mahasiswa Sistem Informasi di <span className="text-slate-900 font-bold">Institut Teknologi Del</span> yang berfokus pada Manajemen data, Analisis sistem, Pemrograman, dan Perancangan antarmuka pengguna (UI/UX).
+          Saya adalah mahasiswa Sistem Informasi di <span className="text-slate-900 font-bold">Institut Teknologi Del</span> yang berfokus pada Manajemen data, Analisis sistem, Pemrograman, Perancangan antarmuka pengguna (UI/UX), dan Analisis Business.
         </p>
         
         <p className="text-slate-600 leading-relaxed text-base sm:text-lg font-medium">
@@ -37,7 +37,7 @@ export default function AboutPage() {
             href="/portfolio"
             className="bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-xl shadow-md hover:-translate-y-0.5 active:scale-95 transition-all duration-200"
           >
-            Lihat Portfolio &rarr;
+            Lihat Portfolio
           </Link>
           <Link
             href="/contact"

@@ -108,7 +108,7 @@ export default function RootLayout({
 
         {/* Footer Global */}
         <footer className="border-t border-slate-200/60 py-8 text-center text-xs font-semibold text-slate-400 bg-white/40 backdrop-blur-sm mt-auto">
-          &copy; {new Date().getFullYear()} Choqy Pananda Sirait. System Analyst &amp; Web Developer.
+          &copy; {new Date().getFullYear()} Choqy Pananda Sirait. 
         </footer>
 
       </body>
