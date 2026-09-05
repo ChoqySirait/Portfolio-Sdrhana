@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
+import ScrollReveal from '../components/ScrollReveal';
 
 interface ProjectItem {
   id: number;
@@ -73,10 +74,8 @@ export default function PortfolioPage() {
       impact: "Mengoptimalkan akurasi laporan keuangan harian outlet dan mempercepat alur transaksi kasir pada jam sibuk.",
       image: "https://images.unsplash.com/photo-1556742049-0a67dd60f9dd?auto=format&fit=crop&w=800&q=80",
       tags: ["Java", "OOP", "MySQL"],
-      linkType: "none", // Contoh proyek tanpa link eksternal
+      linkType: "none",
     },
-
-    /* --- SLOT PROYEK TAMBAHAN --- */
     {
       id: 5,
       title: "Proyek Mendatang #1 (System Analysis)",
@@ -115,88 +114,93 @@ export default function PortfolioPage() {
 
   return (
     <main className="max-w-6xl mx-auto px-6 py-8">
-      <div className="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
-        <div>
-          <div className="flex items-center space-x-3 mb-3">
-            <span className="w-8 h-0.5 bg-rose-600"></span>
-            <span className="text-xs font-bold uppercase tracking-widest text-rose-600">
-              MY WORKS
-            </span>
+      {/* Header Section */}
+      <ScrollReveal>
+        <div className="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <div className="flex items-center space-x-3 mb-3">
+              <span className="w-8 h-0.5 bg-rose-600"></span>
+              <span className="text-xs font-bold uppercase tracking-widest text-rose-600 font-mono">
+                [MY_WORKS // 02]
+              </span>
+            </div>
+            <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">Proyek Pilihan</h1>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">Proyek Pilihan</h1>
-        </div>
 
-        {/* Tombol Swipe Modern & Besar */}
-        <div className="flex items-center space-x-3">
-          <button 
-            onClick={() => scroll('left')}
-            className="w-12 h-12 rounded-2xl bg-white/90 backdrop-blur-md border border-slate-200 hover:border-rose-600 text-slate-700 hover:text-rose-600 flex items-center justify-center transition-all duration-200 active:scale-90 shadow-md shadow-slate-200/50 hover:shadow-rose-600/20 cursor-pointer group"
-            aria-label="Previous Slide"
-          >
-            <svg className="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7"/></svg>
-          </button>
-          <button 
-            onClick={() => scroll('right')}
-            className="w-12 h-12 rounded-2xl bg-white/90 backdrop-blur-md border border-slate-200 hover:border-rose-600 text-slate-700 hover:text-rose-600 flex items-center justify-center transition-all duration-200 active:scale-90 shadow-md shadow-slate-200/50 hover:shadow-rose-600/20 cursor-pointer group"
-            aria-label="Next Slide"
-          >
-            <svg className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7"/></svg>
-          </button>
+          {/* Tombol Swipe */}
+          <div className="flex items-center space-x-3">
+            <button 
+              onClick={() => scroll('left')}
+              className="w-12 h-12 rounded-2xl bg-white/90 backdrop-blur-md border border-slate-200 hover:border-rose-600 text-slate-700 hover:text-rose-600 flex items-center justify-center transition-all duration-200 active:scale-90 shadow-md shadow-slate-200/50 hover:shadow-rose-600/20 cursor-pointer group"
+              aria-label="Previous Slide"
+            >
+              <svg className="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <button 
+              onClick={() => scroll('right')}
+              className="w-12 h-12 rounded-2xl bg-white/90 backdrop-blur-md border border-slate-200 hover:border-rose-600 text-slate-700 hover:text-rose-600 flex items-center justify-center transition-all duration-200 active:scale-90 shadow-md shadow-slate-200/50 hover:shadow-rose-600/20 cursor-pointer group"
+              aria-label="Next Slide"
+            >
+              <svg className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
         </div>
-      </div>
+      </ScrollReveal>
 
       {/* Carousel Container */}
-      <div 
-        ref={scrollContainerRef}
-        className="flex space-x-6 overflow-x-auto pb-8 pt-2 no-scrollbar snap-x snap-mandatory"
-      >
-        {myProjects.map((project) => (
-          <div 
-            key={project.id} 
-            className="flex-none w-[310px] sm:w-[360px] snap-start bg-white/90 backdrop-blur-md rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-rose-300 transition-all duration-300 flex flex-col justify-between overflow-hidden group"
-          >
-            <div>
-              <div className="h-48 w-full overflow-hidden relative">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <span className="absolute top-3 left-3 text-[10px] font-extrabold uppercase tracking-wider text-rose-600 bg-white/90 backdrop-blur-md px-3.5 py-1 rounded-full shadow-sm">
-                  {project.category}
-                </span>
-              </div>
+      <ScrollReveal delayClass="delay-100">
+        <div 
+          ref={scrollContainerRef}
+          className="flex space-x-6 overflow-x-auto pb-8 pt-2 no-scrollbar snap-x snap-mandatory"
+        >
+          {myProjects.map((project) => (
+            <div 
+              key={project.id} 
+              className="flex-none w-[310px] sm:w-[360px] snap-start bg-white/90 backdrop-blur-md rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-rose-300 transition-all duration-300 flex flex-col justify-between overflow-hidden group"
+            >
+              <div>
+                <div className="h-48 w-full overflow-hidden relative">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <span className="absolute top-3 left-3 text-[10px] font-extrabold uppercase tracking-wider text-rose-600 bg-white/90 backdrop-blur-md px-3.5 py-1 rounded-full shadow-sm">
+                    {project.category}
+                  </span>
+                </div>
 
-              <div className="p-6">
-                <h2 className="text-lg font-extrabold text-slate-900 mb-2 group-hover:text-rose-600 transition-colors line-clamp-2">
-                  {project.title}
-                </h2>
-                <p className="text-slate-600 text-xs sm:text-sm font-medium leading-relaxed mb-4 line-clamp-2">
-                  {project.description}
-                </p>
-                
-                <div className="flex flex-wrap gap-1.5 mb-2">
-                  {project.tags.map((tag, i) => (
-                    <span key={i} className="text-[10px] font-bold bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-mono">
-                      #{tag}
-                    </span>
-                  ))}
+                <div className="p-6">
+                  <h2 className="text-lg font-extrabold text-slate-900 mb-2 group-hover:text-rose-600 transition-colors line-clamp-2">
+                    {project.title}
+                  </h2>
+                  <p className="text-slate-600 text-xs sm:text-sm font-medium leading-relaxed mb-4 line-clamp-2">
+                    {project.description}
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-1.5 mb-2">
+                    {project.tags.map((tag, i) => (
+                      <span key={i} className="text-[10px] font-bold bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-mono">
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="p-6 pt-0 border-t border-slate-100/80 mt-2">
-              <button
-                type="button"
-                onClick={() => setSelectedProject(project)}
-                className="w-full mt-4 bg-slate-900 hover:bg-rose-600 text-white font-extrabold text-xs uppercase tracking-wider py-3.5 rounded-xl transition-all duration-200 active:scale-95 shadow-sm cursor-pointer"
-              >
-                Lihat Detail Proyek
-              </button>
+              <div className="p-6 pt-0 border-t border-slate-100/80 mt-2">
+                <button
+                  type="button"
+                  onClick={() => setSelectedProject(project)}
+                  className="w-full mt-4 bg-slate-900 hover:bg-rose-600 text-white font-extrabold text-xs uppercase tracking-wider py-3.5 rounded-xl transition-all duration-200 active:scale-95 shadow-sm cursor-pointer"
+                >
+                  Lihat Detail Proyek
+                </button>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </ScrollReveal>
 
       {/* Pop-Up Modal Detail Proyek */}
       {selectedProject && (
@@ -217,7 +221,7 @@ export default function PortfolioPage() {
             </div>
             
             <div className="p-6 sm:p-8 max-h-[65vh] overflow-y-auto">
-              <span className="text-[10px] font-extrabold uppercase tracking-wider text-rose-600 bg-rose-50 px-3 py-1 rounded-full">
+              <span className="text-[10px] font-extrabold uppercase tracking-wider text-rose-600 bg-rose-50 px-3 py-1 rounded-full font-mono">
                 {selectedProject.category}
               </span>
               
@@ -229,9 +233,8 @@ export default function PortfolioPage() {
                 {selectedProject.fullDetail}
               </p>
 
-              {/* Dampak Proyek */}
               <div className="bg-rose-50/80 border border-rose-100 rounded-2xl p-4 mb-6">
-                <h4 className="text-[11px] font-bold text-rose-700 uppercase tracking-wider mb-1">Dampak &amp; Solusi Sistem:</h4>
+                <h4 className="text-[11px] font-bold text-rose-700 uppercase tracking-wider mb-1 font-mono">Dampak &amp; Solusi Sistem:</h4>
                 <p className="text-xs text-slate-700 font-semibold leading-relaxed">
                   {selectedProject.impact}
                 </p>
@@ -245,7 +248,6 @@ export default function PortfolioPage() {
                 ))}
               </div>
 
-              {/* Tombol Dinamis: Figma / GitHub / In Development */}
               <div className="flex gap-3 pt-3 border-t border-slate-100">
                 {selectedProject.linkType === 'figma' && selectedProject.figmaUrl && (
                   <a

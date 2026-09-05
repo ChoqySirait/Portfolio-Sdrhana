@@ -29,7 +29,6 @@ export default function RootLayout({
 
       setRipples((prev) => [...prev, newRipple]);
 
-      // Hapus gelembung setelah animasi selesai (500ms)
       setTimeout(() => {
         setRipples((prev) => prev.filter((r) => r.id !== newRipple.id));
       }, 500);
@@ -68,15 +67,15 @@ export default function RootLayout({
         <div className="fixed top-0 right-0 w-[500px] h-[500px] bg-rose-500/5 rounded-full blur-[120px] pointer-events-none -z-10"></div>
         <div className="fixed bottom-0 left-0 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[120px] pointer-events-none -z-10"></div>
 
-        {/* Navbar Global */}
-        <header className="fixed top-0 left-0 right-0 bg-[#F8F9FA]/85 backdrop-blur-md z-40 border-b border-slate-200/60 transition-all duration-300">
+        {/* Navbar Global (Floating Glassmorphism + Border & Shadow Terlihat Jelas) */}
+        <header className="fixed top-0 left-0 right-0 bg-[#F8F9FA]/85 backdrop-blur-xl z-40 border-b border-rose-500/10 shadow-md shadow-slate-200/60 transition-all duration-300">
           <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             
             <Link 
               href="/" 
               className="font-black text-xl tracking-wider text-slate-900 hover:opacity-80 transition-all duration-200 active:scale-95 flex items-center gap-1 group"
             >
-              <span>CP</span>
+              <span>CPS</span>
               <span className="w-2 h-2 rounded-full bg-rose-600 group-hover:scale-150 transition-transform"></span>
             </Link>
 
@@ -89,7 +88,7 @@ export default function RootLayout({
                     href={item.path}
                     className={`text-xs sm:text-sm font-bold tracking-wider px-3.5 py-1.5 rounded-full transition-all duration-200 active:scale-95 ${
                       isActive
-                        ? 'bg-rose-600 text-white shadow-md shadow-rose-600/20'
+                        ? 'bg-rose-600 text-white shadow-md shadow-rose-600/30'
                         : 'text-slate-600 hover:text-rose-600 hover:bg-rose-50/80'
                     }`}
                   >
@@ -101,14 +100,14 @@ export default function RootLayout({
           </div>
         </header>
 
-        {/* Content Area dengan Transisi Mulus */}
-        <div className="flex-grow pt-24 pb-12 animate-page-entry">
+        {/* Content Area dengan Transisi Mulus & Jarak Margin Pas */}
+        <div className="flex-grow pt-28 pb-12 animate-page-entry">
           {children}
         </div>
 
         {/* Footer Global */}
         <footer className="border-t border-slate-200/60 py-8 text-center text-xs font-semibold text-slate-400 bg-white/40 backdrop-blur-sm mt-auto">
-          &copy; {new Date().getFullYear()} Choqy Pananda Sirait. 
+          &copy; {new Date().getFullYear()} Choqy Pananda Sirait.
         </footer>
 
       </body>
