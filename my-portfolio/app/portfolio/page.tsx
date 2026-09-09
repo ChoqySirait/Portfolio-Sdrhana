@@ -63,7 +63,7 @@ export default function PortfolioPage() {
       image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80",
       tags: ["HTML5", "JavaScript", "CSS3"],
       linkType: "github",
-      githubUrl: "https://github.com/ChoqySirait",
+      githubUrl: "https://github.com/ChoqySirait/Nakama-To-Do-List",
     },
     {
       id: 4,
