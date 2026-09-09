@@ -121,7 +121,7 @@ export default function PortfolioPage() {
             <div className="flex items-center space-x-3 mb-3">
               <span className="w-8 h-0.5 bg-rose-600"></span>
               <span className="text-xs font-bold uppercase tracking-widest text-rose-600 font-mono">
-                [MY_WORKS // 02]
+                PROYEK
               </span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">Proyek Pilihan</h1>
