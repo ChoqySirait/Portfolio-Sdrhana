@@ -38,8 +38,8 @@ export default function PortfolioPage() {
       impact: "Memangkas waktu verifikasi pengambilan paket hingga 50% dan meminimalisir risiko kesalahan pendataan inventaris secara signifikan.",
       image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
       tags: ["React", "Node.js", "Tailwind CSS"],
-      linkType: "github",
-      githubUrl: "https://github.com/ChoqySirait",
+      linkType: "figma",
+      githubUrl: "https://www.figma.com/design/jcpu2VvqOW6k8LJdFMYNn8/ANAPRANCIS-A?node-id=0-1&t=d57jtjtXUCy520Un-1",
     },
     {
       id: 2,
@@ -51,7 +51,7 @@ export default function PortfolioPage() {
       image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80",
       tags: ["Figma", "UI/UX", "User Research"],
       linkType: "figma",
-      figmaUrl: "https://www.figma.com",
+      figmaUrl: "https://www.figma.com/design/sk3lf3VuJE0mLsAoBTPcFp/KEL-2?node-id=0-1&t=l8rA88dVaj8z29Hp-1",
     },
     {
       id: 3,
