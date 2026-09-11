@@ -116,7 +116,7 @@ export default function PortfolioPage() {
     <main className="max-w-6xl mx-auto px-6 py-8">
       {/* Header Section */}
       <ScrollReveal>
-        <div className="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div className="mb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
             <div className="flex items-center space-x-3 mb-3">
               <span className="w-8 h-0.5 bg-rose-600"></span>
@@ -127,8 +127,8 @@ export default function PortfolioPage() {
             <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">Proyek Pilihan</h1>
           </div>
 
-          {/* Tombol Swipe */}
-          <div className="flex items-center space-x-3">
+          {/* Tombol Swipe Desktop */}
+          <div className="hidden sm:flex items-center space-x-3">
             <button 
               onClick={() => scroll('left')}
               className="w-12 h-12 rounded-2xl bg-white/90 backdrop-blur-md border border-slate-200 hover:border-rose-600 text-slate-700 hover:text-rose-600 flex items-center justify-center transition-all duration-200 active:scale-90 shadow-md shadow-slate-200/50 hover:shadow-rose-600/20 cursor-pointer group"
@@ -145,6 +145,11 @@ export default function PortfolioPage() {
             </button>
           </div>
         </div>
+
+        {/* Petunjuk Swipe Khusus Mobile */}
+        <p className="sm:hidden text-[11px] font-semibold text-rose-600 mb-4 flex items-center gap-1.5 animate-pulse">
+          <span>← Geser kartu untuk melihat lebih banyak →</span>
+        </p>
       </ScrollReveal>
 
       {/* Carousel Container */}
@@ -215,6 +220,7 @@ export default function PortfolioPage() {
               <button 
                 onClick={() => setSelectedProject(null)}
                 className="absolute top-4 right-4 bg-white/90 hover:bg-white text-slate-800 rounded-full w-9 h-9 flex items-center justify-center font-bold text-sm shadow-md transition-all active:scale-90 cursor-pointer"
+                aria-label="Tutup Modal"
               >
                 ✕
               </button>
