@@ -20,7 +20,6 @@ export default function RootLayout({
   const [ripples, setRipples] = useState<Ripple[]>([]);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Efek Ripple saat Layar Diklik
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
       const newRipple: Ripple = {
@@ -56,7 +55,7 @@ export default function RootLayout({
       </head>
       <body className="bg-[#F8F9FA] text-slate-800 font-sans antialiased selection:bg-rose-600 selection:text-white flex flex-col min-h-screen bg-web-grid relative">
         
-        {/* Render Efek Gelembung / Ripple */}
+        {/* Render Efek Gelembung / Ripple saat Diklik */}
         {ripples.map((ripple) => (
           <div
             key={ripple.id}
@@ -81,7 +80,7 @@ export default function RootLayout({
               <span className="w-2 h-2 rounded-full bg-rose-600 group-hover:scale-150 transition-transform"></span>
             </Link>
 
-            {/* Navigasi Desktop */}
+            {/* Desktop Nav */}
             <nav className="hidden md:flex space-x-1 sm:space-x-2">
               {navItems.map((item) => {
                 const isActive = pathname === item.path;
@@ -101,7 +100,7 @@ export default function RootLayout({
               })}
             </nav>
 
-            {/* Tombol Hamburger (Mobile) */}
+            {/* Mobile Hamburger Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden p-2 rounded-xl text-slate-800 hover:text-rose-600 hover:bg-rose-50 focus:outline-none transition-colors"
