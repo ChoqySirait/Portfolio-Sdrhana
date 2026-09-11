@@ -41,17 +41,9 @@ body {
   }
   40% {
     transform: translateY(-20%);
-    -webkit-transform: translateY(-20%);
-    -moz-transform: translateY(-20%);
-    -ms-transform: translateY(-20%);
-    -o-transform: translateY(-20%);
   }
   60% {
     transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
   }
   82% {
     opacity: 1;
@@ -78,14 +70,10 @@ body {
 
 /* Animasi Masuk Halaman Mulus Container Utama */
 @keyframes pageEntry {
-  from {
-    opacity: 0;
-    transform: translateY(16px) scale(0.99);
-    -webkit-transform: translateY(16px) scale(0.99);
-    -moz-transform: translateY(16px) scale(0.99);
-    -ms-transform: translateY(16px) scale(0.99);
-    -o-transform: translateY(16px) scale(0.99);
-}
+  from { 
+    opacity: 0; 
+    transform: translateY(16px) scale(0.99); 
+  }
   to { 
     opacity: 1; 
     transform: translateY(0) scale(1); 
@@ -140,7 +128,6 @@ body {
   z-index: 9999;
   transform: translate(-50%, -50%);
   animation: clickRipple 0.5s cubic-bezier(0, 0.2, 0.8, 1) forwards;
-  -webkit-animation: clickRipple 0.5s cubic-bezier(0, 0.2, 0.8, 1) forwards;
 }
 
 /* Bright Crimson Neon Glow pada Hover Nama */
