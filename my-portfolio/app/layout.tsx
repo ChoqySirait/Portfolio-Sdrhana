@@ -18,7 +18,9 @@ export default function RootLayout({
 }) {
   const pathname = usePathname();
   const [ripples, setRipples] = useState<Ripple[]>([]);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // Efek Ripple saat Layar Diklik
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
       const newRipple: Ripple = {
@@ -54,7 +56,7 @@ export default function RootLayout({
       </head>
       <body className="bg-[#F8F9FA] text-slate-800 font-sans antialiased selection:bg-rose-600 selection:text-white flex flex-col min-h-screen bg-web-grid relative">
         
-        {/* Render Efek Gelembung / Ripple saat Diklik */}
+        {/* Render Efek Gelembung / Ripple */}
         {ripples.map((ripple) => (
           <div
             key={ripple.id}
@@ -67,8 +69,8 @@ export default function RootLayout({
         <div className="fixed top-0 right-0 w-[500px] h-[500px] bg-rose-500/5 rounded-full blur-[120px] pointer-events-none -z-10"></div>
         <div className="fixed bottom-0 left-0 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[120px] pointer-events-none -z-10"></div>
 
-        {/* Navbar Global (Floating Glassmorphism + Border & Shadow Terlihat Jelas) */}
-        <header className="fixed top-0 left-0 right-0 bg-[#F8F9FA]/85 backdrop-blur-xl z-40 border-b border-rose-500/10 shadow-md shadow-slate-200/60 transition-all duration-300">
+        {/* Navbar Global Floating Glassmorphism */}
+        <header className="fixed top-0 left-0 right-0 bg-[#F8F9FA]/90 backdrop-blur-xl z-40 border-b border-rose-500/10 shadow-md shadow-slate-200/60 transition-all duration-300">
           <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             
             <Link 
@@ -79,7 +81,8 @@ export default function RootLayout({
               <span className="w-2 h-2 rounded-full bg-rose-600 group-hover:scale-150 transition-transform"></span>
             </Link>
 
-            <nav className="flex space-x-1 sm:space-x-2">
+            {/* Navigasi Desktop */}
+            <nav className="hidden md:flex space-x-1 sm:space-x-2">
               {navItems.map((item) => {
                 const isActive = pathname === item.path;
                 return (
@@ -97,10 +100,50 @@ export default function RootLayout({
                 );
               })}
             </nav>
+
+            {/* Tombol Hamburger (Mobile) */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden p-2 rounded-xl text-slate-800 hover:text-rose-600 hover:bg-rose-50 focus:outline-none transition-colors"
+              aria-label="Toggle Navigation Menu"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {isMobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
           </div>
+
+          {/* Drawer Menu Mobile */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden bg-white/95 backdrop-blur-2xl border-b border-rose-100 px-6 py-4 shadow-xl animate-in fade-in slide-in-from-top-4 duration-200">
+              <nav className="flex flex-col space-y-2">
+                {navItems.map((item) => {
+                  const isActive = pathname === item.path;
+                  return (
+                    <Link
+                      key={item.name}
+                      href={item.path}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={`text-xs font-bold tracking-wider px-4 py-3 rounded-xl transition-all ${
+                        isActive
+                          ? 'bg-rose-600 text-white shadow-md shadow-rose-600/30'
+                          : 'text-slate-700 hover:bg-rose-50 hover:text-rose-600'
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  );
+                })}
+              </nav>
+            </div>
+          )}
         </header>
 
-        {/* Content Area dengan Transisi Mulus & Jarak Margin Pas */}
+        {/* Content Area */}
         <div className="flex-grow pt-28 pb-12 animate-page-entry">
           {children}
         </div>
