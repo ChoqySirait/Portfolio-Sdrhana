@@ -136,6 +136,7 @@ body {
   z-index: 9999;
   transform: translate(-50%, -50%);
   animation: clickRipple 0.5s cubic-bezier(0, 0.2, 0.8, 1) forwards;
+  -webkit-animation: clickRipple 0.5s cubic-bezier(0, 0.2, 0.8, 1) forwards;
 }
 
 /* Bright Crimson Neon Glow pada Hover Nama */

@@ -36,10 +36,10 @@ export default function PortfolioPage() {
       description: "Aplikasi pencatatan dan pengambilan paket terintegrasi berbasis Web/Mobile.",
       fullDetail: "Sistem ini dirancang khusus untuk mempermudah operasional UMKM dalam mengelola arus paket masuk dan keluar. Dilengkapi fitur pencatatan real-time, verifikasi identitas pengambilan, serta laporan aktivitas transaksi harian secara otomatis.",
       impact: "Memangkas waktu verifikasi pengambilan paket hingga 50% dan meminimalisir risiko kesalahan pendataan inventaris secara signifikan.",
-      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
+      image: "/ProjekUMKN.png",
       tags: ["React", "Node.js", "Tailwind CSS"],
-      linkType: "figma",
-      githubUrl: "https://www.figma.com/design/jcpu2VvqOW6k8LJdFMYNn8/ANAPRANCIS-A?node-id=0-1&t=d57jtjtXUCy520Un-1",
+      linkType: "github",
+      githubUrl: "https://github.com/ChoqySirait",
     },
     {
       id: 2,
@@ -48,10 +48,10 @@ export default function PortfolioPage() {
       description: "Desain dan antarmuka web pemesanan paket wisata Samosir & Danau Toba.",
       fullDetail: "Triporia adalah prototipe aplikasi travel yang berfokus pada kemudahan wisatawan menjelajahi keindahan Samosir dan Danau Toba. Desain dibuat modern dengan alur pemesanan hotel, pemandu wisata lokal, serta navigasi destinasi yang intuitif.",
       impact: "Meningkatkan skor usability testing pengguna hingga 85% melalui tata letak antarmuka yang ramah pengguna dan akses informasi wisata terpusat.",
-      image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80",
+      image: "/ProjekTriporia.png",
       tags: ["Figma", "UI/UX", "User Research"],
       linkType: "figma",
-      figmaUrl: "https://www.figma.com/design/sk3lf3VuJE0mLsAoBTPcFp/KEL-2?node-id=0-1&t=l8rA88dVaj8z29Hp-1",
+      figmaUrl: "https://www.figma.com",
     },
     {
       id: 3,
@@ -60,10 +60,10 @@ export default function PortfolioPage() {
       description: "Manajemen tugas harian berbasis web dengan fitur penyaringan lokal.",
       fullDetail: "Aplikasi produktivitas harian yang ringan dan responsif. Menggunakan Vanilla JS dan penyimpanan LocalStorage sehingga tugas-tugas pengguna tidak akan hilang saat browser ditutup. Dilengkapi fitur kategori dan filter progres kerja.",
       impact: "Menyediakan alat manajemen tugas tanpa latensi server dengan persistensi data lokal 100% aman di sisi browser pengguna.",
-      image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80",
+      image: "/To-do-list.jpg.png",
       tags: ["HTML5", "JavaScript", "CSS3"],
       linkType: "github",
-      githubUrl: "https://github.com/ChoqySirait/Nakama-To-Do-List",
+      githubUrl: "https://github.com/ChoqySirait",
     },
     {
       id: 4,
@@ -121,7 +121,7 @@ export default function PortfolioPage() {
             <div className="flex items-center space-x-3 mb-3">
               <span className="w-8 h-0.5 bg-rose-600"></span>
               <span className="text-xs font-bold uppercase tracking-widest text-rose-600 font-mono">
-                PROYEK
+                [MY_WORKS // 02]
               </span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">Proyek Pilihan</h1>
