@@ -78,10 +78,14 @@ body {
 
 /* Animasi Masuk Halaman Mulus Container Utama */
 @keyframes pageEntry {
-  from { 
-    opacity: 0; 
-    transform: translateY(16px) scale(0.99); 
-  }
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.99);
+    -webkit-transform: translateY(16px) scale(0.99);
+    -moz-transform: translateY(16px) scale(0.99);
+    -ms-transform: translateY(16px) scale(0.99);
+    -o-transform: translateY(16px) scale(0.99);
+}
   to { 
     opacity: 1; 
     transform: translateY(0) scale(1); 
