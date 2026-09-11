@@ -6,12 +6,12 @@ export default function HomePage() {
 
   return (
     <main className="max-w-6xl mx-auto px-6">
-      <section className="min-h-[70vh] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center py-4">
+      <section className="min-h-[70vh] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center py-2 sm:py-4">
         
         {/* Sisi Kiri: Teks Hero Utama */}
         <div className="lg:col-span-7 flex flex-col justify-center items-start z-10">
           <ScrollReveal>
-            <div className="flex items-center space-x-3 mb-4">
+            <div className="flex items-center space-x-3 mb-3 sm:mb-4">
               <span className="w-8 h-0.5 bg-rose-600"></span>
               <span className="text-xs font-bold uppercase tracking-widest text-rose-600 font-mono">
                 Hello
@@ -32,7 +32,7 @@ export default function HomePage() {
           </ScrollReveal>
 
           {/* Quick Skill Badges */}
-          <ScrollReveal delayClass="delay-200">
+          <ScrollReveal delayClass="delay-200" className="w-full">
             <div className="flex flex-wrap gap-2 mb-8">
               {mainSkills.map((skill, index) => (
                 <span 
@@ -45,12 +45,13 @@ export default function HomePage() {
             </div>
           </ScrollReveal>
 
-          <ScrollReveal delayClass="delay-200">
-            <div className="flex flex-wrap items-center gap-4">
+          {/* Tombol CTA (Layar HP: Full Width, Layar Besar: Auto Width) */}
+          <ScrollReveal delayClass="delay-200" className="w-full">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 w-full sm:w-auto">
               <a
                 href="/CV_Choqy_Pananda_Sirait.pdf"
                 download
-                className="bg-rose-600 hover:bg-rose-700 text-white font-extrabold text-xs uppercase tracking-wider px-8 py-4 rounded-xl shadow-lg shadow-rose-600/25 hover:shadow-rose-600/40 transition-all duration-300 hover:-translate-y-1 active:scale-95 flex items-center gap-2"
+                className="w-full sm:w-auto bg-rose-600 hover:bg-rose-700 text-white font-extrabold text-xs uppercase tracking-wider px-8 py-4 rounded-xl shadow-lg shadow-rose-600/25 hover:shadow-rose-600/40 transition-all duration-300 hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-2 text-center"
               >
                 <span>DOWNLOAD CV</span>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
@@ -58,7 +59,7 @@ export default function HomePage() {
               
               <Link
                 href="/contact"
-                className="border-2 border-slate-200 hover:border-slate-800 text-slate-700 hover:text-slate-900 font-extrabold text-xs uppercase tracking-wider px-8 py-3.5 rounded-xl transition-all duration-300 hover:-translate-y-1 active:scale-95"
+                className="w-full sm:w-auto border-2 border-slate-200 hover:border-slate-800 text-slate-700 hover:text-slate-900 font-extrabold text-xs uppercase tracking-wider px-8 py-3.5 rounded-xl transition-all duration-300 hover:-translate-y-1 active:scale-95 text-center"
               >
                 CONTACT ME
               </Link>
@@ -66,8 +67,8 @@ export default function HomePage() {
           </ScrollReveal>
 
           {/* Social Links Clean */}
-          <ScrollReveal delayClass="delay-300">
-            <div className="flex items-center space-x-6 mt-10 text-slate-400 text-xs font-bold tracking-widest">
+          <ScrollReveal delayClass="delay-300" className="w-full">
+            <div className="flex items-center justify-start space-x-6 mt-8 sm:mt-10 text-slate-400 text-xs font-bold tracking-widest">
               <a href="https://github.com/ChoqySirait" target="_blank" rel="noreferrer" className="hover:text-rose-600 hover:scale-105 transition-all duration-200">GITHUB</a>
               <span>•</span>
               <a href="https://www.linkedin.com/in/choqypanandasirait" target="_blank" rel="noreferrer" className="hover:text-rose-600 hover:scale-105 transition-all duration-200">LINKEDIN</a>
@@ -77,8 +78,8 @@ export default function HomePage() {
           </ScrollReveal>
         </div>
 
-        {/* Sisi Kanan: Spider-Man Mengayun */}
-        <div className="lg:col-span-5 flex justify-center items-center relative py-6 lg:py-0">
+        {/* Sisi Kanan: Spider-Man (Sembunyi di HP Portrait, Tampil di Desktop/HP Landscape) */}
+        <div className="hidden lg:flex landscape:flex lg:col-span-5 justify-center items-center relative py-6 lg:py-0">
           <div className="relative w-56 sm:w-72 lg:w-80 h-[260px] sm:h-[320px] flex justify-center items-start group">
             <div className="absolute inset-0 bg-rose-500/15 rounded-full blur-3xl group-hover:bg-rose-500/30 transition-all duration-500"></div>
             <div className="animate-spiderman">

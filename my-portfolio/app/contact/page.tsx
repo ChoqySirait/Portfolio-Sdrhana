@@ -61,13 +61,13 @@ export default function ContactPage() {
                 Terbuka untuk proyek kolaborasi, diskusi teknologi, analisis sistem, maupun peluang karir.
               </p>
 
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-col sm:flex-row gap-3.5 sm:gap-4">
                 {/* Tombol Kirim Email */}
                 <a
                   href={gmailUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 bg-rose-600 hover:bg-rose-700 text-white font-extrabold text-xs uppercase tracking-wider px-7 py-4 rounded-2xl shadow-lg shadow-rose-600/30 hover:shadow-rose-600/50 hover:-translate-y-1 active:scale-95 transition-all duration-300"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-rose-600 hover:bg-rose-700 text-white font-extrabold text-xs uppercase tracking-wider px-7 py-4 rounded-2xl shadow-lg shadow-rose-600/30 hover:shadow-rose-600/50 hover:-translate-y-1 active:scale-95 transition-all duration-300"
                 >
                   <span>Kirim Pesan Email</span>
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
@@ -76,7 +76,7 @@ export default function ContactPage() {
                 {/* Tombol Copy Email */}
                 <button
                   onClick={handleCopyEmail}
-                  className="inline-flex items-center gap-2.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-extrabold text-xs uppercase tracking-wider px-6 py-4 rounded-2xl backdrop-blur-md hover:-translate-y-1 active:scale-95 transition-all duration-300 cursor-pointer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-extrabold text-xs uppercase tracking-wider px-6 py-4 rounded-2xl backdrop-blur-md hover:-translate-y-1 active:scale-95 transition-all duration-300 cursor-pointer"
                 >
                   <svg className="w-4 h-4 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
                   <span>{copied ? "Berhasil Disalin!" : "Salin Email"}</span>
@@ -84,8 +84,8 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Sisi Kanan: Gambar Spider-Man Action */}
-            <div className="lg:col-span-5 flex justify-center items-center">
+            {/* Sisi Kanan: Gambar Spider-Man (Sembunyi di HP Portrait, Tampil di Desktop/HP Landscape) */}
+            <div className="hidden lg:flex landscape:flex lg:col-span-5 justify-center items-center">
               <div className="relative w-56 sm:w-64 lg:w-72 h-auto">
                 <div className="absolute inset-0 bg-rose-600/20 rounded-full blur-2xl group-hover:bg-rose-600/35 transition-all duration-500"></div>
                 <Image
