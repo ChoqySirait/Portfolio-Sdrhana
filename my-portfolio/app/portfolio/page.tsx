@@ -38,8 +38,8 @@ export default function PortfolioPage() {
       impact: "Memangkas waktu verifikasi pengambilan paket hingga 50% dan meminimalisir risiko kesalahan pendataan inventaris secara signifikan.",
       image: "/ProjekUMKN.png",
       tags: ["React", "Node.js", "Tailwind CSS"],
-      linkType: "github",
-      githubUrl: "https://github.com/ChoqySirait",
+      linkType: "figma",
+      figmaUrl: "https://www.figma.com/design/jcpu2VvqOW6k8LJdFMYNn8/ANAPRANCIS-A?node-id=0-1&t=R8MBUf5nc0j9vZYJ-1",
     },
     {
       id: 2,
@@ -51,7 +51,7 @@ export default function PortfolioPage() {
       image: "/ProjekTriporia.png",
       tags: ["Figma", "UI/UX", "User Research"],
       linkType: "figma",
-      figmaUrl: "https://www.figma.com",
+      figmaUrl: "https://www.figma.com/design/sk3lf3VuJE0mLsAoBTPcFp/KEL-2?node-id=0-1&t=4PAzCGVIItE9ahzP-1",
     },
     {
       id: 3,
@@ -63,7 +63,7 @@ export default function PortfolioPage() {
       image: "/To-do-list.jpg.png",
       tags: ["HTML5", "JavaScript", "CSS3"],
       linkType: "github",
-      githubUrl: "https://github.com/ChoqySirait",
+      githubUrl: "https://github.com/ChoqySirait/Nakama-To-Do-Listt",
     },
     {
       id: 4,
@@ -74,7 +74,8 @@ export default function PortfolioPage() {
       impact: "Mencegah potensi kerugian akibat barang kadaluwarsa di gudang, meningkatkan akurasi stok fisik hingga 100%, serta mempercepat pembuatan laporan audit pergudangan.",
       image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
       tags: ["Node.js", "Express.js", "MySQL", "Tailwind CSS", "REST API", "FIFO Engine"],
-      linkType: "https://github.com/ChoqySirait/SupplySync-Mini-Warehouse-Management-System",
+      linkType : "figma",
+      githubUrl: "https://github.com/ChoqySirait/SupplySync-Mini-Warehouse-Management-System",
     },
     {
       id: 5,
