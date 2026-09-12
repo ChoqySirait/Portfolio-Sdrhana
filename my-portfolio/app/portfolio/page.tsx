@@ -74,7 +74,7 @@ export default function PortfolioPage() {
       impact: "Mencegah potensi kerugian akibat barang kadaluwarsa di gudang, meningkatkan akurasi stok fisik hingga 100%, serta mempercepat pembuatan laporan audit pergudangan.",
       image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
       tags: ["Node.js", "Express.js", "MySQL", "Tailwind CSS", "REST API", "FIFO Engine"],
-      linkType: "github",
+      linkType: "https://github.com/ChoqySirait/SupplySync-Mini-Warehouse-Management-System",
     },
     {
       id: 5,

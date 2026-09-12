@@ -13,24 +13,25 @@ export default function ScrollReveal({ children, delayClass = '', className = ''
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.15 }
-    );
+  const currentRef = ref.current;
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+        if (currentRef) observer.unobserve(currentRef);
+      }
+    },
+    { threshold: 0.15 }
+  );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+  if (currentRef) {
+    observer.observe(currentRef);
+  }
 
-    return () => {
-      if (ref.current) observer.unobserve(ref.current);
-    };
-  }, []);
+  return () => {
+    if (currentRef) observer.unobserve(currentRef);
+  };
+}, []);
 
   return (
     <div
