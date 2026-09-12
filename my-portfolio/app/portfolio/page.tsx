@@ -32,12 +32,12 @@ export default function PortfolioPage() {
     {
       id: 1,
       title: "Sistem Manajemen Pengambilan Paket UMKM",
-      category: "Web App",
+      category: "UI/UX Design",
       description: "Aplikasi pencatatan dan pengambilan paket terintegrasi berbasis Web/Mobile.",
       fullDetail: "Sistem ini dirancang khusus untuk mempermudah operasional UMKM dalam mengelola arus paket masuk dan keluar. Dilengkapi fitur pencatatan real-time, verifikasi identitas pengambilan, serta laporan aktivitas transaksi harian secara otomatis.",
       impact: "Memangkas waktu verifikasi pengambilan paket hingga 50% dan meminimalisir risiko kesalahan pendataan inventaris secara signifikan.",
       image: "/ProjekUMKN.png",
-      tags: ["React", "Node.js", "Tailwind CSS"],
+      tags: ["Figma", "UI/UX", "System Design"],
       linkType: "figma",
       figmaUrl: "https://www.figma.com/design/jcpu2VvqOW6k8LJdFMYNn8/ANAPRANCIS-A?node-id=0-1&t=R8MBUf5nc0j9vZYJ-1",
     },
@@ -74,7 +74,7 @@ export default function PortfolioPage() {
       impact: "Mencegah potensi kerugian akibat barang kadaluwarsa di gudang, meningkatkan akurasi stok fisik hingga 100%, serta mempercepat pembuatan laporan audit pergudangan.",
       image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
       tags: ["Node.js", "Express.js", "MySQL", "Tailwind CSS", "REST API", "FIFO Engine"],
-      linkType : "figma",
+      linkType: "github",
       githubUrl: "https://github.com/ChoqySirait/SupplySync-Mini-Warehouse-Management-System",
     },
     {
