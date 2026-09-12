@@ -60,7 +60,7 @@ export default function PortfolioPage() {
       description: "Manajemen tugas harian berbasis web dengan fitur penyaringan lokal.",
       fullDetail: "Aplikasi produktivitas harian yang ringan dan responsif. Menggunakan Vanilla JS dan penyimpanan LocalStorage sehingga tugas-tugas pengguna tidak akan hilang saat browser ditutup. Dilengkapi fitur kategori dan filter progres kerja.",
       impact: "Menyediakan alat manajemen tugas tanpa latensi server dengan persistensi data lokal 100% aman di sisi browser pengguna. Simpel namun sangat berdampak",
-      image: "/To-do-list.jpg.png",
+      image: "/to-do-list.png",
       tags: ["HTML5", "JavaScript", "CSS3"],
       linkType: "github",
       githubUrl: "https://github.com/ChoqySirait/Nakama-To-Do-Listt",
