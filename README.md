@@ -7,7 +7,7 @@
 
 Personal web portfolio built with Next.js App Router, TypeScript, and Tailwind CSS. Designed with a clean Spider-Man accent aesthetic, featuring high performance, interactive micro-interactions, and fully responsive layouts.
 
-🚀 **Live Demo:** [portfolio-sdrhana.vercel.app](https://portfolio-sdrhana.vercel.app) *(or your updated domain)*
+🚀 **Live Demo:** [portfolio-sdrhana.vercel.app](https://portfolio-sdrhana.vercel.app) 
 
 ---
 
