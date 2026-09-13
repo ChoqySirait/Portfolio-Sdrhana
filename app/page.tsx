@@ -45,7 +45,7 @@ export default function HomePage() {
             </div>
           </ScrollReveal>
 
-          {/* Tombol CTA (Mobile: Full Width, Desktop: Auto Width) */}
+          {/* Tombol CTA */}
           <ScrollReveal delayClass="delay-200" className="w-full">
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 w-full sm:w-auto">
               <a
@@ -78,7 +78,7 @@ export default function HomePage() {
           </ScrollReveal>
         </div>
 
-        {/* Sisi Kanan: Spider-Man (HANYA TAMPIL DI DESKTOP/LAPTOP) */}
+        {/* Sisi Kanan: Spider-Man */}
         <div className="hidden lg:flex lg:col-span-5 justify-center items-center relative py-6 lg:py-0">
           <div className="relative w-56 sm:w-72 lg:w-80 h-[260px] sm:h-[320px] flex justify-center items-start group">
             <div className="absolute inset-0 bg-rose-500/15 rounded-full blur-3xl group-hover:bg-rose-500/30 transition-all duration-500"></div>

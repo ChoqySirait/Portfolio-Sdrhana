@@ -9,13 +9,13 @@ export default function NotFound() {
         </span>
         <div className="absolute inset-0 flex items-center justify-center">
           <span className="text-xl sm:text-2xl font-extrabold text-slate-900 bg-white/80 backdrop-blur-md px-6 py-2 rounded-2xl border border-rose-200 shadow-lg">
-            Sinyal Terputus di Multiverse!
+            Signal Lost in the Multiverse!
           </span>
         </div>
       </div>
 
       <p className="text-slate-600 text-sm sm:text-base font-medium max-w-md mb-8 leading-relaxed">
-        Halaman yang kamu cari tidak ditemukan atau telah berpindah dimensi. Silakan kembali ke dimensi utama.
+        The page you are looking for does not exist or has shifted dimensions. Please return to the primary dimension.
       </p>
 
       <Link
@@ -25,7 +25,7 @@ export default function NotFound() {
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
         </svg>
-        <span>Kembali ke Dimensi</span>
+        <span>Back to Home Dimension</span>
       </Link>
     </main>
   );
