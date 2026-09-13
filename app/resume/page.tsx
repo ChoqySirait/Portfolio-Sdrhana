@@ -37,10 +37,10 @@ export default function ResumePage() {
     },
     {
       period: "2025 - 2026",
-      role: "Pengembang Utama & UI/UX Designer",
-      organization: "Proyek Akademia",
+      role: "Asisten Dosen Mata Kuliah Algoritma dan Struktur Data (ALSTRUDAT)",
+      organization: "Akademik",
       institution: "Institut Teknologi Del",
-      description: "Memimpin perancangan antarmuka Triporia dan pengembangan sistem manajemen aplikasi kasir/audit terintegrasi."
+      description: "Menjadi Asisten Dosen dalam Praktikum di mata kuliah tercantum"
     }
   ];
 
