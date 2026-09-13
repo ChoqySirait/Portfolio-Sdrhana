@@ -109,7 +109,7 @@ export default function PortfolioPage() {
       image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
       tags: ["Figma", "Mobile UI", "Design System"],
       linkType: "figma",
-      figmaUrl: "https://www.figma.com",
+      figmaUrl: "none",
     },
   ];
 
