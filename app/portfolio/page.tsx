@@ -90,7 +90,7 @@ export default function PortfolioPage() {
     },
     {
       id: 6,
-      title: "Proyek Mendatang #2 (Cybersecurity Audit)",
+      title: "Proyek Mendatang #2",
       category: "Security",
       description: "Riset dan pengujian celah keamanan pada antarmuka web dan server.",
       fullDetail: "Slot ini disiapkan untuk dokumentasi pengujian keamanan, analisis kerentanan sistem, serta implementasi standar keamanan data jaringan.",
