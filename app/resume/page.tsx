@@ -16,10 +16,10 @@ export default function ResumePage() {
   const experiences = [
     {
       period: "FEB 2026 - SEKARANG",
-      role: "Anggota Divisi Kesejahteraan Mahasiswa",
+      role: "Anggota Majelis Permusyawaratan Mahasiswa",
       organization: "Majelis Permusyawaratan Mahasiswa (MPM)",
       institution: "Institut Teknologi Del",
-      description: "Aktif mengawal aspirasi mahasiswa, mengelola program kesejahteraan kampus, serta berkontribusi dalam perumusan kebijakan organisasi mahasiswa tingkat institut."
+      description: "Aktif mengawal aspirasi mahasiswa, mengawasi Badan Eksekutif Mahasiswa(BEM), serta berkontribusi dalam perumusan kebijakan organisasi mahasiswa tingkat institut."
     },
     {
       period: "AGU 2025 - MEI 2026",
