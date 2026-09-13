@@ -30,10 +30,10 @@ export default function ResumePage() {
     },
     {
       period: "2024 - SEKARANG",
-      role: "Mahasiswa S1 Sistem Informasi",
-      organization: "Akademik",
+      role: "Anggota Del Programming (DELPRO)",
+      organization: "UKM (Unit Kegiatan Mahasiswa)",
       institution: "Institut Teknologi Del",
-      description: "Mempelajari analisis sistem, pemodelan data, pemrograman terstruktur (Java, C, JS), dan riset strategi bisnis digital."
+      description: "Mempelajari pemrograman terstruktur (Java, C, JS), dan aktif dalam organisasi ."
     },
     {
       period: "2025 - 2026",
@@ -53,7 +53,7 @@ export default function ResumePage() {
             <div className="flex items-center space-x-3 mb-3">
               <span className="w-8 h-0.5 bg-rose-600"></span>
               <span className="text-xs font-bold uppercase tracking-widest text-rose-600 font-mono">
-                [SYS_RESUME // 02]
+                Resume
               </span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">Pengalaman &amp; Organisasi</h1>
@@ -80,7 +80,7 @@ export default function ResumePage() {
 
         {/* Petunjuk Swipe Khusus Mobile */}
         <p className="sm:hidden text-[11px] font-semibold text-rose-600 mb-4 flex items-center gap-1.5 animate-pulse">
-          <span>← Geser riwayat untuk melihat lebih banyak →</span>
+          <span>Geser riwayat untuk melihat lebih banyak</span>
         </p>
       </ScrollReveal>
 
