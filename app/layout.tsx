@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Choqy Pananda Sirait | Portfolio',
   description: 'Personal Portfolio of Choqy Pananda Sirait - Information Systems Student at IT Del & Cybersecurity Enthusiast',
   icons: {
-    icon: '/icon.jpg', // Otomatis memakai logo Spider-Man kamu!
+    icon: '/icon.jpg', // Otomatis memakai logo Spider-Man 
   },
   openGraph: {
     title: 'Choqy Pananda Sirait | Portfolio',

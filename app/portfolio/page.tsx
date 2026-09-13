@@ -149,7 +149,7 @@ export default function PortfolioPage() {
 
         {/* Petunjuk Swipe Khusus Mobile */}
         <p className="sm:hidden text-[11px] font-semibold text-rose-600 mb-4 flex items-center gap-1.5 animate-pulse">
-          <span>← Geser kartu untuk melihat lebih banyak →</span>
+          <span>Geser kartu untuk melihat lebih banyak</span>
         </p>
       </ScrollReveal>
 
@@ -200,7 +200,7 @@ export default function PortfolioPage() {
                   onClick={() => setSelectedProject(project)}
                   className="w-full mt-4 bg-slate-900 hover:bg-rose-600 text-white font-extrabold text-xs uppercase tracking-wider py-3.5 rounded-xl transition-all duration-200 active:scale-95 shadow-sm cursor-pointer"
                 >
-                  Lihat Detail Proyek
+                  Detail
                 </button>
               </div>
             </div>

@@ -15,7 +15,7 @@ export default function NotFound() {
       </div>
 
       <p className="text-slate-600 text-sm sm:text-base font-medium max-w-md mb-8 leading-relaxed">
-        Halaman yang kamu cari tidak ditemukan atau telah berpindah dimensi. Silakan kembali ke jalur utama.
+        Halaman yang kamu cari tidak ditemukan atau telah berpindah dimensi. Silakan kembali ke dimensi utama.
       </p>
 
       <Link
@@ -25,7 +25,7 @@ export default function NotFound() {
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
         </svg>
-        <span>Kembali ke Beranda</span>
+        <span>Kembali ke Dimensi</span>
       </Link>
     </main>
   );
