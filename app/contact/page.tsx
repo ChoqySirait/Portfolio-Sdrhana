@@ -18,8 +18,8 @@ export default function ContactPage() {
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(
-      formData.subject || 'Pesan dari Portofolio Web'
-    )}&body=${encodeURIComponent(`Nama: ${formData.name}\n\nPesan:\n${formData.message}`)}`;
+      formData.subject || 'Inquiry from Portfolio Website'
+    )}&body=${encodeURIComponent(`Name: ${formData.name}\n\nMessage:\n${formData.message}`)}`;
     
     window.open(mailtoLink, '_blank');
   };
@@ -27,7 +27,7 @@ export default function ContactPage() {
   return (
     <main className="max-w-5xl mx-auto px-6 py-8 relative overflow-hidden min-h-[70vh] flex items-center justify-center">
       
-      {/* BACKGROUND SPIDER-WEB (Layar Luar) */}
+      {/* BACKGROUND SPIDER-WEB */}
       <div className="absolute inset-0 pointer-events-none flex items-center justify-between opacity-15 -z-10">
         <svg viewBox="0 0 300 300" className="w-80 h-80 text-rose-600 animate-web-flicker -translate-x-1/3">
           <path d="M150 0 V300 M0 150 H300 M44 44 L256 256 M256 44 L44 256" stroke="currentColor" strokeWidth="1" strokeDasharray="6 6" />
@@ -59,11 +59,11 @@ export default function ContactPage() {
               </div>
 
               <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black mb-3 tracking-tight text-white leading-tight">
-                Mari Berdiskusi &amp; Bekerja Sama
+                Let&apos;s Connect &amp; Collaborate
               </h1>
               
               <p className="text-slate-300 text-xs sm:text-sm mb-6 leading-relaxed font-medium">
-                Kirimkan pesan langsung melalui formulir di bawah ini atau salin alamat email saya.
+                Send a direct message through the form below or copy my email address.
               </p>
 
               {/* Form Pesan Cepat */}
@@ -71,7 +71,7 @@ export default function ContactPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <input
                     type="text"
-                    placeholder="Nama Lengkap"
+                    placeholder="Full Name"
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -79,7 +79,7 @@ export default function ContactPage() {
                   />
                   <input
                     type="text"
-                    placeholder="Subjek / Topik"
+                    placeholder="Subject / Topic"
                     required
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
@@ -87,7 +87,7 @@ export default function ContactPage() {
                   />
                 </div>
                 <textarea
-                  placeholder="Tuliskan pesan kamu di sini..."
+                  placeholder="Write your message here..."
                   rows={3}
                   required
                   value={formData.message}
@@ -100,7 +100,7 @@ export default function ContactPage() {
                     type="submit"
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-rose-600 hover:bg-rose-700 text-white font-extrabold text-xs uppercase tracking-wider px-7 py-3.5 rounded-xl shadow-lg shadow-rose-600/30 hover:-translate-y-0.5 active:scale-95 transition-all duration-200 cursor-pointer"
                   >
-                    <span>Kirim Pesan</span>
+                    <span>Send Message</span>
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                   </button>
 
@@ -110,13 +110,13 @@ export default function ContactPage() {
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-extrabold text-xs uppercase tracking-wider px-6 py-3.5 rounded-xl backdrop-blur-md hover:-translate-y-0.5 active:scale-95 transition-all duration-200 cursor-pointer"
                   >
                     <svg className="w-4 h-4 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-                    <span>{copied ? "Berhasil Disalin!" : "Salin Email"}</span>
+                    <span>{copied ? "Copied!" : "Copy Email"}</span>
                   </button>
                 </div>
               </form>
             </div>
 
-            {/* Sisi Kanan: Spider-Man (HANYA TAMPIL DI DESKTOP/LAPTOP) */}
+            {/* Sisi Kanan: Spider-Man */}
             <div className="hidden lg:flex lg:col-span-5 justify-center items-center">
               <div className="relative w-56 sm:w-64 lg:w-72 h-auto">
                 <div className="absolute inset-0 bg-rose-600/20 rounded-full blur-2xl group-hover:bg-rose-600/35 transition-all duration-500"></div>
@@ -140,7 +140,7 @@ export default function ContactPage() {
       {copied && (
         <div className="fixed bottom-6 right-6 bg-slate-900 text-white text-xs font-bold px-5 py-3.5 rounded-2xl shadow-2xl border border-rose-500/40 flex items-center gap-2.5 animate-in fade-in slide-in-from-bottom-5 duration-200 z-50">
           <span className="w-2.5 h-2.5 rounded-full bg-rose-500 animate-ping"></span>
-          <span>Email disalin: choqypenandasirait@gmail.com</span>
+          <span>Email copied: choqypenandasirait@gmail.com</span>
         </div>
       )}
     </main>

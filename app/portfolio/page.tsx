@@ -31,11 +31,11 @@ export default function PortfolioPage() {
   const myProjects: ProjectItem[] = [
     {
       id: 1,
-      title: "Sistem Manajemen Pengambilan Paket UMKM",
+      title: "MSME Parcel Pickup Management System",
       category: "UI/UX Design",
-      description: "Aplikasi pencatatan dan pengambilan paket terintegrasi berbasis Web/Mobile.",
-      fullDetail: "Sistem ini dirancang khusus untuk mempermudah operasional UMKM dalam mengelola arus paket masuk dan keluar. Dilengkapi fitur pencatatan real-time, verifikasi identitas pengambilan, serta laporan aktivitas transaksi harian secara otomatis.",
-      impact: "Memangkas waktu verifikasi pengambilan paket hingga 50% dan meminimalisir risiko kesalahan pendataan inventaris secara signifikan.",
+      description: "Integrated Web/Mobile package logging and retrieval application.",
+      fullDetail: "Specially designed to streamline MSME operations in managing inbound and outbound package flows. Features real-time recording, pickup identity verification, and automated daily transaction activity reports.",
+      impact: "Reduced package pickup verification time by up to 50% and significantly minimized inventory data errors.",
       image: "/ProjekUMKN.png",
       tags: ["Figma", "UI/UX", "System Design"],
       linkType: "figma",
@@ -43,11 +43,11 @@ export default function PortfolioPage() {
     },
     {
       id: 2,
-      title: "Prototype Guide Travel & Hotel (TRIPORIA)",
+      title: "Travel & Hotel Guide Prototype (TRIPORIA)",
       category: "UI/UX Design",
-      description: "Desain dan antarmuka web pemesanan paket Guide Travel wisata Samosir & Danau Toba.",
-      fullDetail: "Triporia adalah prototipe aplikasi travel yang berfokus pada kemudahan wisatawan menjelajahi keindahan Samosir dan Danau Toba. Desain dibuat modern dengan alur pemesanan hotel, pemandu wisata lokal, serta navigasi destinasi yang intuitif.",
-      impact: "Meningkatkan skor usability testing pengguna hingga 85% melalui tata letak antarmuka yang ramah pengguna dan akses informasi wisata terpusat, juga membantu meningkatkan strategi bisnis untuk organisasi travel.",
+      description: "Web interface and booking design prototype for Samosir & Lake Toba tour packages.",
+      fullDetail: "Triporia is a travel application prototype focusing on helping tourists seamlessly explore Samosir and Lake Toba. Features a modern layout for booking hotels, local tour guides, and intuitive destination navigation.",
+      impact: "Increased user usability testing score up to 85% through a user-friendly layout and centralized travel information, while enhancing business strategy for local tourism operators.",
       image: "/ProjekTriporia.png",
       tags: ["Figma", "UI/UX", "User Research"],
       linkType: "figma",
@@ -55,11 +55,11 @@ export default function PortfolioPage() {
     },
     {
       id: 3,
-      title: "Nakama To-Do List Interaktif",
+      title: "Nakama Interactive To-Do List",
       category: "Frontend Web",
-      description: "Manajemen tugas harian berbasis web dengan fitur penyaringan lokal.",
-      fullDetail: "Aplikasi produktivitas harian yang ringan dan responsif. Menggunakan Vanilla JS dan penyimpanan LocalStorage sehingga tugas-tugas pengguna tidak akan hilang saat browser ditutup. Dilengkapi fitur kategori dan filter progres kerja.",
-      impact: "Menyediakan alat manajemen tugas tanpa latensi server dengan persistensi data lokal 100% aman di sisi browser pengguna. Simpel namun sangat berdampak",
+      description: "Lightweight web-based daily task management featuring local filtering.",
+      fullDetail: "A responsive productivity app built with Vanilla JS and LocalStorage, ensuring tasks remain saved even after closing the browser. Includes categories and progress filtering.",
+      impact: "Provides zero-latency task management with 100% secure local browser data persistence. Simple yet highly impactful.",
       image: "/to-do-list.png",
       tags: ["HTML5", "JavaScript", "CSS3"],
       linkType: "github",
@@ -69,9 +69,9 @@ export default function PortfolioPage() {
       id: 4,
       title: "SupplySync — Enterprise Warehouse Management System",
       category: "Fullstack Web & Database Engine",
-      description: "Sistem pergudangan enterprise berfitur Auto-FIFO Engine, batch tracking, dan audit log transaksi real-time.",
-      fullDetail: "Aplikasi manajemen pergudangan kelas industri yang mengoptimalkan rotasi barang menggunakan logika Auto-FIFO (First-In, First-Out) berbasis transaksi database terisolasi. Dilengkapi pelacakan batch stok berdasarkan expired date, modul penerimaan dan pengeluaran barang interaktif, pencatatan Audit Trail otomatis untuk pencegahan fraud, serta fitur ekspor laporan ke format CSV.",
-      impact: "Mencegah potensi kerugian akibat barang kadaluwarsa di gudang, meningkatkan akurasi stok fisik hingga 100%, serta mempercepat pembuatan laporan audit pergudangan.",
+      description: "Enterprise warehouse system featuring Auto-FIFO Engine, batch tracking, and real-time transaction audit logs.",
+      fullDetail: "An industrial-grade warehouse management app optimizing inventory rotation via database-isolated Auto-FIFO (First-In, First-Out) logic. Features stock batch expiration tracking, inbound/outbound item modules, automated Audit Trails for fraud prevention, and CSV export capabilities.",
+      impact: "Prevents losses from expired inventory, increases physical stock accuracy to 100%, and accelerates warehouse audit reporting.",
       image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
       tags: ["Node.js", "Express.js", "MySQL", "Tailwind CSS", "REST API", "FIFO Engine"],
       linkType: "github",
@@ -79,37 +79,36 @@ export default function PortfolioPage() {
     },
     {
       id: 5,
-      title: "Proyek Mendatang #1",
+      title: "Upcoming Project #1",
       category: "System Analysis",
-      description: "Pengembangan arsitektur dan pemodelan sistem informasi bisnis digital.",
-      fullDetail: "Slot ini disiapkan untuk proyek analisis sistem mendatang. Akan mencakup alur UML, rancangan skema basis data, dan analisis kebutuhan pengguna secara komprehensif.",
-      impact: "Menjadi acuan cetak biru (blueprint) dalam pengembangan sistem informasi berskala enterprise.",
+      description: "Architecture development and modeling for digital business information systems.",
+      fullDetail: "This slot is prepared for an upcoming system analysis project. It will encompass UML diagrams, database schema designs, and comprehensive user requirement specifications.",
+      impact: "Serves as an architectural blueprint for enterprise-scale information system development.",
       image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80",
       tags: ["UML", "Database Design", "System Architecture"],
       linkType: "none",
     },
     {
       id: 6,
-      title: "Proyek Mendatang #2",
+      title: "Upcoming Project #2",
       category: "Security",
-      description: "Riset dan pengujian celah keamanan pada antarmuka web dan server.",
-      fullDetail: "Slot ini disiapkan untuk dokumentasi pengujian keamanan, analisis kerentanan sistem, serta implementasi standar keamanan data jaringan.",
-      impact: "Meningkatkan daya tahan aplikasi terhadap celah keamanan siber dan potensi kebocoran data.",
+      description: "Research and vulnerability assessment for web interfaces and server infrastructures.",
+      fullDetail: "This slot is designated for security audit documentation, vulnerability assessment, and network security protocol implementation.",
+      impact: "Enhances application resilience against cyber threats and potential data breaches.",
       image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80",
       tags: ["Cybersecurity", "Network Audit", "Data Protection"],
       linkType: "none",
     },
     {
       id: 7,
-      title: "Proyek Mendatang #3)",
+      title: "Upcoming Project #3",
       category: "UI/UX Design",
-      description: "Inovasi prototipe aplikasi mobile interaktif berbasis studi pengguna.",
-      fullDetail: "Slot ini disiapkan untuk proyek desain antarmuka aplikasi seluler mendatang lengkap dengan Design System dan High-Fidelity Prototype di Figma.",
-      impact: "Menghadirkan pengalaman interaksi seluler yang intuitif, modern, dan mudah digunakan.",
+      description: "Interactive mobile application prototype grounded in user research.",
+      fullDetail: "This slot is set aside for a future mobile UI/UX design project, complete with Design System documentation and a High-Fidelity Figma Prototype.",
+      impact: "Delivers an intuitive, modern, and seamless mobile interaction experience.",
       image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
       tags: ["Figma", "Mobile UI", "Design System"],
-      linkType: "figma",
-      figmaUrl: "none",
+      linkType: "none",
     },
   ];
 
@@ -122,10 +121,10 @@ export default function PortfolioPage() {
             <div className="flex items-center space-x-3 mb-3">
               <span className="w-8 h-0.5 bg-rose-600"></span>
               <span className="text-xs font-bold uppercase tracking-widest text-rose-600 font-mono">
-                My Project
+                My Projects
               </span>
             </div>
-            <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">Proyek Pilihan</h1>
+            <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">Featured Projects</h1>
           </div>
 
           {/* Tombol Swipe Desktop */}
@@ -149,7 +148,7 @@ export default function PortfolioPage() {
 
         {/* Petunjuk Swipe Khusus Mobile */}
         <p className="sm:hidden text-[11px] font-semibold text-rose-600 mb-4 flex items-center gap-1.5 animate-pulse">
-          <span>Geser kartu untuk melihat lebih banyak</span>
+          <span>Swipe cards to explore more</span>
         </p>
       </ScrollReveal>
 
@@ -200,7 +199,7 @@ export default function PortfolioPage() {
                   onClick={() => setSelectedProject(project)}
                   className="w-full mt-4 bg-slate-900 hover:bg-rose-600 text-white font-extrabold text-xs uppercase tracking-wider py-3.5 rounded-xl transition-all duration-200 active:scale-95 shadow-sm cursor-pointer"
                 >
-                  Detail
+                  View Details
                 </button>
               </div>
             </div>
@@ -221,7 +220,7 @@ export default function PortfolioPage() {
               <button 
                 onClick={() => setSelectedProject(null)}
                 className="absolute top-4 right-4 bg-white/90 hover:bg-white text-slate-800 rounded-full w-9 h-9 flex items-center justify-center font-bold text-sm shadow-md transition-all active:scale-90 cursor-pointer"
-                aria-label="Tutup Modal"
+                aria-label="Close Modal"
               >
                 ✕
               </button>
@@ -241,7 +240,7 @@ export default function PortfolioPage() {
               </p>
 
               <div className="bg-rose-50/80 border border-rose-100 rounded-2xl p-4 mb-6">
-                <h4 className="text-[11px] font-bold text-rose-700 uppercase tracking-wider mb-1 font-mono">Dampak &amp; Solusi Sistem:</h4>
+                <h4 className="text-[11px] font-bold text-rose-700 uppercase tracking-wider mb-1 font-mono">System Impact &amp; Solution:</h4>
                 <p className="text-xs text-slate-700 font-semibold leading-relaxed">
                   {selectedProject.impact}
                 </p>
@@ -263,7 +262,7 @@ export default function PortfolioPage() {
                     rel="noopener noreferrer"
                     className="flex-1 bg-rose-600 hover:bg-rose-700 text-white font-extrabold text-xs uppercase tracking-wider py-3.5 rounded-xl text-center transition-all active:scale-95 shadow-md shadow-rose-600/20"
                   >
-                    Buka Figma Prototype
+                    Open Figma Prototype
                   </a>
                 )}
 
@@ -274,7 +273,7 @@ export default function PortfolioPage() {
                     rel="noopener noreferrer"
                     className="flex-1 bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-xs uppercase tracking-wider py-3.5 rounded-xl text-center transition-all active:scale-95"
                   >
-                    Buka GitHub Repo
+                    Open GitHub Repo
                   </a>
                 )}
 
@@ -288,7 +287,7 @@ export default function PortfolioPage() {
                   onClick={() => setSelectedProject(null)}
                   className="px-6 bg-slate-100 hover:bg-slate-200 text-slate-700 font-extrabold text-xs uppercase tracking-wider py-3.5 rounded-xl transition-all active:scale-95 cursor-pointer"
                 >
-                  Tutup
+                  Close
                 </button>
               </div>
             </div>
