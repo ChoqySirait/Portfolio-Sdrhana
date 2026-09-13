@@ -101,7 +101,7 @@ export default function PortfolioPage() {
     },
     {
       id: 7,
-      title: "Proyek Mendatang #3 (UI/UX Mobile App)",
+      title: "Proyek Mendatang #3)",
       category: "UI/UX Design",
       description: "Inovasi prototipe aplikasi mobile interaktif berbasis studi pengguna.",
       fullDetail: "Slot ini disiapkan untuk proyek desain antarmuka aplikasi seluler mendatang lengkap dengan Design System dan High-Fidelity Prototype di Figma.",
