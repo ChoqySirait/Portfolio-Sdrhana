@@ -79,7 +79,7 @@ export default function PortfolioPage() {
     },
     {
       id: 5,
-      title: "Proyek Mendatang #1 (System Analysis)",
+      title: "Proyek Mendatang #1",
       category: "System Analysis",
       description: "Pengembangan arsitektur dan pemodelan sistem informasi bisnis digital.",
       fullDetail: "Slot ini disiapkan untuk proyek analisis sistem mendatang. Akan mencakup alur UML, rancangan skema basis data, dan analisis kebutuhan pengguna secara komprehensif.",
