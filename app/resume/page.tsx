@@ -15,32 +15,32 @@ export default function ResumePage() {
 
   const experiences = [
     {
-      period: "FEB 2026 - SEKARANG",
-      role: "Anggota Majelis Permusyawaratan Mahasiswa",
-      organization: "Majelis Permusyawaratan Mahasiswa (MPM)",
-      institution: "Institut Teknologi Del",
-      description: "Aktif mengawal aspirasi mahasiswa, mengawasi Badan Eksekutif Mahasiswa(BEM), serta berkontribusi dalam perumusan kebijakan organisasi mahasiswa tingkat institut."
+      period: "FEB 2026 - PRESENT",
+      role: "Member of Student Consultative Assembly",
+      organization: "Student Consultative Assembly (MPM)",
+      institution: "Del Institute of Technology",
+      description: "Actively representing student aspirations, supervising the Student Executive Board (BEM), and contributing to institutional-level student organization policies."
     },
     {
-      period: "AGU 2025 - MEI 2026",
-      role: "Abang Asuh (Mentor Mahasiswa Baru)",
-      organization: "Program Mentorship Kampus",
-      institution: "Institut Teknologi Del",
-      description: "Membimbing dan mendampingi mahasiswa baru dalam proses adaptasi akademik, pembentukan karakter, serta kehidupan asrama di lingkungan IT Del."
+      period: "AUG 2025 - MAY 2026",
+      role: "Peer Mentor (Freshmen Advisory)",
+      organization: "Campus Mentorship Program",
+      institution: "Del Institute of Technology",
+      description: "Guiding and mentoring freshmen through academic transition, character building, and dormitory life within the IT Del environment."
     },
     {
-      period: "2024 - SEKARANG",
-      role: "Anggota Del Programming (DELPRO)",
-      organization: "UKM (Unit Kegiatan Mahasiswa)",
-      institution: "Institut Teknologi Del",
-      description: "Mempelajari pemrograman terstruktur (Java, C, JS), dan aktif dalam organisasi ."
+      period: "2024 - PRESENT",
+      role: "Active Member of Del Programming",
+      organization: "DELPRO (Student Activity Unit)",
+      institution: "Del Institute of Technology",
+      description: "Studying structured programming (Java, C, JS) and participating actively in departmental organization activities."
     },
     {
       period: "2025 - 2026",
-      role: "Asisten Dosen Mata Kuliah Algoritma dan Struktur Data (ALSTRUDAT)",
-      organization: "Akademik",
-      institution: "Institut Teknologi Del",
-      description: "Menjadi Asisten Dosen dalam Praktikum di mata kuliah tercantum"
+      role: "Teaching Assistant — Data Structures & Algorithms",
+      organization: "Academic Department",
+      institution: "Del Institute of Technology",
+      description: "Served as a Teaching Assistant facilitating practical lab sessions for the Data Structures & Algorithms course."
     }
   ];
 
@@ -56,7 +56,7 @@ export default function ResumePage() {
                 Resume
               </span>
             </div>
-            <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">Pengalaman &amp; Organisasi</h1>
+            <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">Experience &amp; Leadership</h1>
           </div>
 
           {/* Tombol Swipe Desktop */}
@@ -80,7 +80,7 @@ export default function ResumePage() {
 
         {/* Petunjuk Swipe Khusus Mobile */}
         <p className="sm:hidden text-[11px] font-semibold text-rose-600 mb-4 flex items-center gap-1.5 animate-pulse">
-          <span>Geser riwayat untuk melihat lebih banyak</span>
+          <span>Swipe timeline to explore more</span>
         </p>
       </ScrollReveal>
 
