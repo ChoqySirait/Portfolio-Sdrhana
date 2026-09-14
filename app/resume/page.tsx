@@ -37,10 +37,10 @@ export default function ResumePage() {
     },
     {
       period: "2025 - 2026",
-      role: "Teaching Assistant — Data Structures & Algorithms",
-      organization: "Academic Department",
+      role: "Active Member of Del Data Science",
+      organization: "Student Activity Unit",
       institution: "Del Institute of Technology",
-      description: "Served as a Teaching Assistant facilitating practical lab sessions for the Data Structures & Algorithms course."
+      description: "Studying Python and database"
     }
   ];
 
