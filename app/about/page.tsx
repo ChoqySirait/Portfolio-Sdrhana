@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import ScrollReveal from '../components/ScrollReveal';
+import TiltCard from '../components/TiltCard';
 
 export default function AboutPage() {
   const techStacks = [
@@ -24,9 +25,9 @@ export default function AboutPage() {
         </h1>
       </ScrollReveal>
       
-      {/* Profil Ringkas */}
+      {/* Profil Ringkas dengan TiltCard */}
       <ScrollReveal delayClass="delay-100">
-        <div className="bg-white/80 backdrop-blur-md p-8 sm:p-10 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-rose-200 transition-all duration-300 space-y-6 relative overflow-hidden mb-10 group">
+        <TiltCard className="bg-white/80 backdrop-blur-md p-8 sm:p-10 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-rose-200 transition-all duration-300 space-y-6 relative overflow-hidden mb-10 group">
           <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-bl-full pointer-events-none"></div>
 
           <p className="text-slate-600 leading-relaxed text-base sm:text-lg font-medium">
@@ -51,10 +52,10 @@ export default function AboutPage() {
               Contact Me
             </Link>
           </div>
-        </div>
+        </TiltCard>
       </ScrollReveal>
 
-      {/* Tech Stack & Skills Section */}
+      {/* Tech Stack & Skills Section dengan TiltCard */}
       <ScrollReveal delayClass="delay-200">
         <div className="space-y-6">
           <h2 className="text-xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
@@ -64,7 +65,7 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {techStacks.map((stack, idx) => (
-              <div key={idx} className="bg-white/80 backdrop-blur-md p-6 rounded-2xl border border-slate-200/80 shadow-xs hover:border-rose-300 transition-all">
+              <TiltCard key={idx} className="bg-white/80 backdrop-blur-md p-6 rounded-2xl border border-slate-200/80 shadow-xs hover:border-rose-300 transition-all">
                 <h3 className="text-xs font-bold uppercase tracking-wider text-rose-600 mb-4 font-mono">{stack.category}</h3>
                 <div className="flex flex-wrap gap-2">
                   {stack.items.map((item, i) => (
@@ -76,7 +77,7 @@ export default function AboutPage() {
                     </span>
                   ))}
                 </div>
-              </div>
+              </TiltCard>
             ))}
           </div>
         </div>
