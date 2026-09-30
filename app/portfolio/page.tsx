@@ -23,7 +23,7 @@ export default function PortfolioPage() {
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  // Blok kode ini untuk navigasi tombol scroll carousel
+  // Blok kode ini untuk mengontrol tombol geser horizontal carousel
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
       const scrollAmount = direction === 'left' ? -380 : 380;
@@ -39,7 +39,7 @@ export default function PortfolioPage() {
       description: "AI-powered cybersecurity assistant using Hybrid Engine (Local Heuristic + Gemini AI) for URL triage and threat analysis.",
       fullDetail: "An intelligent security assistant built for SOC Level 1 incident triage. Combines Anti-SSRF inspection, incognito screenshot OCR, and LLM reasoning to analyze phishing links, trojan APKs, and malicious domains while mapping tactics directly to the MITRE ATT&CK framework.",
       impact: "Automates level-1 threat triage, URL defanging, and incident report generation, reducing analysis time while accurately distinguishing benign piracy from active malicious intents.",
-      image: "/SecurAI.png", // Gantilah dengan nama file gambar screenshot SecurAI kamu di folder public
+      image: "/SecurAI.png",
       tags: ["FastAPI", "Python", "Gemini AI", "Cybersecurity", "MITRE ATT&CK"],
       linkType: "github",
       githubUrl: "https://github.com/ChoqySirait/SecurAI",
@@ -47,7 +47,7 @@ export default function PortfolioPage() {
     {
       id: 2,
       title: "MSME Parcel Pickup Management System",
-      category: "UI/UX Design",
+      category: "UI/UX & Product Design",
       description: "Integrated Web/Mobile package logging and retrieval application.",
       fullDetail: "Specially designed to streamline MSME operations in managing inbound and outbound package flows. Features real-time recording, pickup identity verification, and automated daily transaction activity reports.",
       impact: "Reduced package pickup verification time by up to 50% and significantly minimized inventory data errors.",
@@ -59,7 +59,7 @@ export default function PortfolioPage() {
     {
       id: 3,
       title: "Travel & Hotel Guide Prototype (TRIPORIA)",
-      category: "UI/UX Design",
+      category: "UI/UX & Product Design",
       description: "Web interface and booking design prototype for Samosir & Lake Toba tour packages.",
       fullDetail: "Triporia is a travel application prototype focusing on helping tourists seamlessly explore Samosir and Lake Toba. Features a modern layout for booking hotels, local tour guides, and intuitive destination navigation.",
       impact: "Increased user usability testing score up to 85% through a user-friendly layout and centralized travel information, while enhancing business strategy for local tourism operators.",
@@ -71,7 +71,7 @@ export default function PortfolioPage() {
     {
       id: 4,
       title: "Nakama Interactive To-Do List",
-      category: "Web Development",
+      category: "Fullstack & Systems",
       description: "Lightweight web-based daily task management featuring local filtering.",
       fullDetail: "A responsive productivity app built with Vanilla JS and LocalStorage, ensuring tasks remain saved even after closing the browser. Includes categories and progress filtering.",
       impact: "Provides zero-latency task management with 100% secure local browser data persistence. Simple yet highly impactful.",
@@ -83,7 +83,7 @@ export default function PortfolioPage() {
     {
       id: 5,
       title: "SupplySync — Enterprise Warehouse Management System",
-      category: "Web Development",
+      category: "Fullstack & Systems",
       description: "(In Progress) Enterprise warehouse system featuring Auto-FIFO Engine, batch tracking, and real-time transaction audit logs.",
       fullDetail: "An industrial-grade warehouse management app optimizing inventory rotation via database-isolated Auto-FIFO (First-In, First-Out) logic. Features stock batch expiration tracking, inbound/outbound item modules, automated Audit Trails for fraud prevention, and CSV export capabilities.",
       impact: "Prevents losses from expired inventory, increases physical stock accuracy to 100%, and accelerates warehouse audit reporting.",
@@ -95,7 +95,7 @@ export default function PortfolioPage() {
     {
       id: 6,
       title: "Upcoming Project #1",
-      category: "System Analysis",
+      category: "Fullstack & Systems",
       description: "Architecture development and modeling for digital business information systems.",
       fullDetail: "This slot is prepared for an upcoming system analysis project. It will encompass UML diagrams, database schema designs, and comprehensive user requirement specifications.",
       impact: "Serves as an architectural blueprint for enterprise-scale information system development.",
@@ -117,7 +117,7 @@ export default function PortfolioPage() {
     {
       id: 8,
       title: "Upcoming Project #3",
-      category: "UI/UX Design",
+      category: "UI/UX & Product Design",
       description: "Interactive mobile application prototype grounded in user research.",
       fullDetail: "This slot is set aside for a future mobile UI/UX design project, complete with Design System documentation and a High-Fidelity Figma Prototype.",
       impact: "Delivers an intuitive, modern, and seamless mobile interaction experience.",
@@ -127,9 +127,10 @@ export default function PortfolioPage() {
     },
   ];
 
-  const categories = ['All', 'Cybersecurity & AI', 'UI/UX Design', 'Web Development', 'System Analysis'];
+  // 3 Pilar Utama Konsolidasi
+  const categories = ['All', 'Cybersecurity & AI', 'UI/UX & Product Design', 'Fullstack & Systems'];
 
-  // Blok kode ini untuk memfilter proyek sesuai kategori aktif
+  // Blok kode ini untuk menyaring proyek berdasarkan filter kategori
   const filteredProjects = activeCategory === 'All' 
     ? myProjects 
     : myProjects.filter(p => p.category === activeCategory);
@@ -168,7 +169,7 @@ export default function PortfolioPage() {
           </div>
         </div>
 
-        {/* Blok kode ini untuk Filter Kategori Proyek */}
+        {/* Filter Kategori Proyek */}
         <div className="flex flex-wrap gap-2 mb-6">
           {categories.map((cat) => (
             <button
@@ -185,13 +186,13 @@ export default function PortfolioPage() {
           ))}
         </div>
 
-        {/* Petunjuk Swipe Mobile */}
+        {/* Petunjuk Mobile */}
         <p className="sm:hidden text-[11px] font-semibold text-rose-600 mb-4 flex items-center gap-1.5 animate-pulse">
           <span>Swipe cards to explore more</span>
         </p>
       </ScrollReveal>
 
-      {/* Carousel Container dengan 3D TiltCard */}
+      {/* Carousel Container */}
       <ScrollReveal delayClass="delay-100">
         <div 
           ref={scrollContainerRef}
@@ -203,7 +204,7 @@ export default function PortfolioPage() {
               className="flex-none w-[310px] sm:w-[360px] snap-start bg-white/90 backdrop-blur-md rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-rose-300 transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
-                <div className="h-48 w-full overflow-hidden relative">
+                <div className="h-48 w-full overflow-hidden relative bg-slate-100">
                   <img 
                     src={project.image} 
                     alt={project.title}
@@ -250,7 +251,7 @@ export default function PortfolioPage() {
       {selectedProject && (
         <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-rose-100 animate-in fade-in zoom-in-95 duration-200">
-            <div className="h-56 w-full relative">
+            <div className="h-56 w-full relative bg-slate-100">
               <img 
                 src={selectedProject.image} 
                 alt={selectedProject.title} 
