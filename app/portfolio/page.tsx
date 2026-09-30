@@ -2,6 +2,7 @@
 
 import React, { useState, useRef } from 'react';
 import ScrollReveal from '../components/ScrollReveal';
+import TiltCard from '../components/TiltCard';
 
 interface ProjectItem {
   id: number;
@@ -19,8 +20,10 @@ interface ProjectItem {
 
 export default function PortfolioPage() {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string>('All');
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
+  // Blok kode ini untuk navigasi tombol scroll carousel
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
       const scrollAmount = direction === 'left' ? -380 : 380;
@@ -30,18 +33,17 @@ export default function PortfolioPage() {
 
   const myProjects: ProjectItem[] = [
     {
-  id: 1,
-  title: "SecurAI — Intelligent SOC L1 Incident Triage & Threat Intelligence Assistant",
-  category: "Cybersecurity & AI Engine",
-  description: "AI-powered cybersecurity assistant using Hybrid Engine (Local Heuristic + Gemini AI) for URL triage and threat analysis.",
-  fullDetail: "An intelligent security assistant built for SOC Level 1 incident triage. Combines Anti-SSRF inspection, incognito screenshot OCR, and LLM reasoning to analyze phishing links, trojan APKs, and malicious domains while mapping tactics directly to the MITRE ATT&CK framework.",
-  impact: "Automates level-1 threat triage, URL defanging, and incident report generation, reducing analysis time while accurately distinguishing benign piracy from active malicious intents.",
-  image: "/SecurAI.png", // sesuaikan dengan nama file gambar screenshot di folder public kamu
-  tags: ["FastAPI", "Python", "Gemini AI", "Cybersecurity", "MITRE ATT&CK"],
-  linkType: "github",
-  githubUrl: "https://github.com/ChoqySirait/Chatbot", // sesuaikan URL repo kamu
+      id: 1,
+      title: "SecurAI — Intelligent SOC L1 Incident Triage & Threat Intelligence Assistant",
+      category: "Cybersecurity & AI",
+      description: "AI-powered cybersecurity assistant using Hybrid Engine (Local Heuristic + Gemini AI) for URL triage and threat analysis.",
+      fullDetail: "An intelligent security assistant built for SOC Level 1 incident triage. Combines Anti-SSRF inspection, incognito screenshot OCR, and LLM reasoning to analyze phishing links, trojan APKs, and malicious domains while mapping tactics directly to the MITRE ATT&CK framework.",
+      impact: "Automates level-1 threat triage, URL defanging, and incident report generation, reducing analysis time while accurately distinguishing benign piracy from active malicious intents.",
+      image: "/SecurAI.png", // Gantilah dengan nama file gambar screenshot SecurAI kamu di folder public
+      tags: ["FastAPI", "Python", "Gemini AI", "Cybersecurity", "MITRE ATT&CK"],
+      linkType: "github",
+      githubUrl: "https://github.com/ChoqySirait/SecurAI",
     },
-    
     {
       id: 2,
       title: "MSME Parcel Pickup Management System",
@@ -69,7 +71,7 @@ export default function PortfolioPage() {
     {
       id: 4,
       title: "Nakama Interactive To-Do List",
-      category: "Frontend Web",
+      category: "Web Development",
       description: "Lightweight web-based daily task management featuring local filtering.",
       fullDetail: "A responsive productivity app built with Vanilla JS and LocalStorage, ensuring tasks remain saved even after closing the browser. Includes categories and progress filtering.",
       impact: "Provides zero-latency task management with 100% secure local browser data persistence. Simple yet highly impactful.",
@@ -81,7 +83,7 @@ export default function PortfolioPage() {
     {
       id: 5,
       title: "SupplySync — Enterprise Warehouse Management System",
-      category: "Fullstack Web & Database Engine",
+      category: "Web Development",
       description: "(In Progress) Enterprise warehouse system featuring Auto-FIFO Engine, batch tracking, and real-time transaction audit logs.",
       fullDetail: "An industrial-grade warehouse management app optimizing inventory rotation via database-isolated Auto-FIFO (First-In, First-Out) logic. Features stock batch expiration tracking, inbound/outbound item modules, automated Audit Trails for fraud prevention, and CSV export capabilities.",
       impact: "Prevents losses from expired inventory, increases physical stock accuracy to 100%, and accelerates warehouse audit reporting.",
@@ -104,7 +106,7 @@ export default function PortfolioPage() {
     {
       id: 7,
       title: "Upcoming Project #2",
-      category: "Security",
+      category: "Cybersecurity & AI",
       description: "Research and vulnerability assessment for web interfaces and server infrastructures.",
       fullDetail: "This slot is designated for security audit documentation, vulnerability assessment, and network security protocol implementation.",
       impact: "Enhances application resilience against cyber threats and potential data breaches.",
@@ -125,6 +127,13 @@ export default function PortfolioPage() {
     },
   ];
 
+  const categories = ['All', 'Cybersecurity & AI', 'UI/UX Design', 'Web Development', 'System Analysis'];
+
+  // Blok kode ini untuk memfilter proyek sesuai kategori aktif
+  const filteredProjects = activeCategory === 'All' 
+    ? myProjects 
+    : myProjects.filter(p => p.category === activeCategory);
+
   return (
     <main className="max-w-6xl mx-auto px-6 py-8">
       {/* Header Section */}
@@ -140,7 +149,7 @@ export default function PortfolioPage() {
             <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">Featured Projects</h1>
           </div>
 
-          {/* Tombol Swipe Desktop */}
+          {/* Tombol Swipe Carousel */}
           <div className="hidden sm:flex items-center space-x-3">
             <button 
               onClick={() => scroll('left')}
@@ -159,22 +168,39 @@ export default function PortfolioPage() {
           </div>
         </div>
 
-        {/* Petunjuk Swipe Khusus Mobile */}
+        {/* Blok kode ini untuk Filter Kategori Proyek */}
+        <div className="flex flex-wrap gap-2 mb-6">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`text-xs font-bold px-4 py-2 rounded-xl border transition-all duration-200 cursor-pointer ${
+                activeCategory === cat
+                  ? 'bg-rose-600 text-white border-rose-600 shadow-md shadow-rose-600/25'
+                  : 'bg-white/80 text-slate-600 border-slate-200 hover:border-rose-400 hover:text-rose-600'
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        {/* Petunjuk Swipe Mobile */}
         <p className="sm:hidden text-[11px] font-semibold text-rose-600 mb-4 flex items-center gap-1.5 animate-pulse">
           <span>Swipe cards to explore more</span>
         </p>
       </ScrollReveal>
 
-      {/* Carousel Container */}
+      {/* Carousel Container dengan 3D TiltCard */}
       <ScrollReveal delayClass="delay-100">
         <div 
           ref={scrollContainerRef}
           className="flex space-x-6 overflow-x-auto pb-8 pt-2 no-scrollbar snap-x snap-mandatory"
         >
-          {myProjects.map((project) => (
-            <div 
+          {filteredProjects.map((project) => (
+            <TiltCard 
               key={project.id} 
-              className="flex-none w-[310px] sm:w-[360px] snap-start bg-white/90 backdrop-blur-md rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-rose-300 transition-all duration-300 flex flex-col justify-between overflow-hidden group"
+              className="flex-none w-[310px] sm:w-[360px] snap-start bg-white/90 backdrop-blur-md rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-rose-300 transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
                 <div className="h-48 w-full overflow-hidden relative">
@@ -215,12 +241,12 @@ export default function PortfolioPage() {
                   View Details
                 </button>
               </div>
-            </div>
+            </TiltCard>
           ))}
         </div>
       </ScrollReveal>
 
-      {/* Pop-Up Modal Detail Proyek */}
+      {/* Modal Detail Proyek */}
       {selectedProject && (
         <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-rose-100 animate-in fade-in zoom-in-95 duration-200">
