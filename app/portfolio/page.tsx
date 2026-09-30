@@ -30,7 +30,20 @@ export default function PortfolioPage() {
 
   const myProjects: ProjectItem[] = [
     {
-      id: 1,
+  id: 1,
+  title: "SecurAI — Intelligent SOC L1 Incident Triage & Threat Intelligence Assistant",
+  category: "Cybersecurity & AI Engine",
+  description: "AI-powered cybersecurity assistant using Hybrid Engine (Local Heuristic + Gemini AI) for URL triage and threat analysis.",
+  fullDetail: "An intelligent security assistant built for SOC Level 1 incident triage. Combines Anti-SSRF inspection, incognito screenshot OCR, and LLM reasoning to analyze phishing links, trojan APKs, and malicious domains while mapping tactics directly to the MITRE ATT&CK framework.",
+  impact: "Automates level-1 threat triage, URL defanging, and incident report generation, reducing analysis time while accurately distinguishing benign piracy from active malicious intents.",
+  image: "/SecurAI.png", // sesuaikan dengan nama file gambar screenshot di folder public kamu
+  tags: ["FastAPI", "Python", "Gemini AI", "Cybersecurity", "MITRE ATT&CK"],
+  linkType: "github",
+  githubUrl: "https://github.com/ChoqySirait/Chatbot", // sesuaikan URL repo kamu
+    },
+    
+    {
+      id: 2,
       title: "MSME Parcel Pickup Management System",
       category: "UI/UX Design",
       description: "Integrated Web/Mobile package logging and retrieval application.",
@@ -42,7 +55,7 @@ export default function PortfolioPage() {
       figmaUrl: "https://www.figma.com/design/jcpu2VvqOW6k8LJdFMYNn8/ANAPRANCIS-A?node-id=0-1&t=R8MBUf5nc0j9vZYJ-1",
     },
     {
-      id: 2,
+      id: 3,
       title: "Travel & Hotel Guide Prototype (TRIPORIA)",
       category: "UI/UX Design",
       description: "Web interface and booking design prototype for Samosir & Lake Toba tour packages.",
@@ -54,7 +67,7 @@ export default function PortfolioPage() {
       figmaUrl: "https://www.figma.com/design/sk3lf3VuJE0mLsAoBTPcFp/KEL-2?node-id=0-1&t=4PAzCGVIItE9ahzP-1",
     },
     {
-      id: 3,
+      id: 4,
       title: "Nakama Interactive To-Do List",
       category: "Frontend Web",
       description: "Lightweight web-based daily task management featuring local filtering.",
@@ -66,7 +79,7 @@ export default function PortfolioPage() {
       githubUrl: "https://github.com/ChoqySirait/Nakama-To-Do-Listt",
     },
     {
-      id: 4,
+      id: 5,
       title: "SupplySync — Enterprise Warehouse Management System",
       category: "Fullstack Web & Database Engine",
       description: "(In Progress) Enterprise warehouse system featuring Auto-FIFO Engine, batch tracking, and real-time transaction audit logs.",
@@ -78,7 +91,7 @@ export default function PortfolioPage() {
       githubUrl: "https://github.com/ChoqySirait/SupplySync-Mini-Warehouse-Management-System",
     },
     {
-      id: 5,
+      id: 6,
       title: "Upcoming Project #1",
       category: "System Analysis",
       description: "Architecture development and modeling for digital business information systems.",
@@ -89,7 +102,7 @@ export default function PortfolioPage() {
       linkType: "none",
     },
     {
-      id: 6,
+      id: 7,
       title: "Upcoming Project #2",
       category: "Security",
       description: "Research and vulnerability assessment for web interfaces and server infrastructures.",
@@ -100,7 +113,7 @@ export default function PortfolioPage() {
       linkType: "none",
     },
     {
-      id: 7,
+      id: 8,
       title: "Upcoming Project #3",
       category: "UI/UX Design",
       description: "Interactive mobile application prototype grounded in user research.",
