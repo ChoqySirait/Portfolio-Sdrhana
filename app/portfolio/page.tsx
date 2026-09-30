@@ -42,7 +42,7 @@ export default function PortfolioPage() {
       image: "/SecurAI.png",
       tags: ["FastAPI", "Python", "Gemini AI", "Cybersecurity", "MITRE ATT&CK"],
       linkType: "github",
-      githubUrl: "https://github.com/ChoqySirait/SecurAI",
+      githubUrl: "https://github.com/ChoqySirait/Chatbot",
     },
     {
       id: 2,
