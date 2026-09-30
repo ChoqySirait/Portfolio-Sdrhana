@@ -1,144 +1,140 @@
 'use client';
 
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
-
-interface Ripple {
-  id: number;
-  x: number;
-  y: number;
-}
-
-const navItems = [
-  { name: 'HOME', path: '/' },
-  { name: 'ABOUT', path: '/about' },
-  { name: 'PORTFOLIO', path: '/portfolio' },
-  { name: 'RESUME', path: '/resume' },
-  { name: 'CONTACT', path: '/contact' },
-];
+import SpiderTerminal from './SpiderTerminal';
 
 export default function ClientShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const [ripples, setRipples] = useState<Ripple[]>([]);
+  const [isTerminalOpen, setIsTerminalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [ripples, setRipples] = useState<Array<{ x: number; y: number; id: number }>>([]);
 
-  useEffect(() => {
-    const handleClick = (e: MouseEvent) => {
-      const newRipple: Ripple = {
-        id: Date.now(),
-        x: e.clientX,
-        y: e.clientY,
-      };
+  // Daftar menu navigasi lengkap termasuk Certifications
+  const navItems = [
+    { name: 'HOME', path: '/' },
+    { name: 'ABOUT', path: '/about' },
+    { name: 'PORTFOLIO', path: '/portfolio' },
+    { name: 'RESUME', path: '/resume' },
+    { name: 'CERTIFICATIONS', path: '/certifications' },
+    { name: 'CONTACT', path: '/contact' },
+  ];
 
-      setRipples((prev) => [...prev, newRipple]);
-
-      setTimeout(() => {
-        setRipples((prev) => prev.filter((r) => r.id !== newRipple.id));
-      }, 500);
+  // Blok kode ini untuk efek klik ripple di seluruh layar
+  const handleGlobalClick = (e: React.MouseEvent) => {
+    const newRipple = {
+      x: e.clientX,
+      y: e.clientY,
+      id: Date.now(),
     };
-
-    window.addEventListener('click', handleClick);
-    return () => window.removeEventListener('click', handleClick);
-  }, []);
+    setRipples((prev) => [...prev, newRipple]);
+    setTimeout(() => {
+      setRipples((prev) => prev.filter((r) => r.id !== newRipple.id));
+    }, 500);
+  };
 
   return (
-    <>
-      {/* Render Efek Gelembung / Ripple */}
-      {ripples.map((ripple) => (
-        <div
-          key={ripple.id}
+    <div onClick={handleGlobalClick} className="min-h-screen flex flex-col justify-between relative">
+      
+      {/* Efek Klik Ripple */}
+      {ripples.map((r) => (
+        <span
+          key={r.id}
           className="click-ripple"
-          style={{ left: `${ripple.x}px`, top: `${ripple.y}px` }}
+          style={{ top: `${r.y}px`, left: `${r.x}px` }}
         />
       ))}
 
-      {/* Ambient Glows Spider-Man Halus */}
-      <div className="fixed top-0 right-0 w-[500px] h-[500px] bg-rose-500/5 rounded-full blur-[120px] pointer-events-none -z-10"></div>
-      <div className="fixed bottom-0 left-0 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[120px] pointer-events-none -z-10"></div>
-
-      {/* Navbar Global Floating Glassmorphism */}
-      <header className="fixed top-0 left-0 right-0 bg-[#F8F9FA]/90 backdrop-blur-xl z-40 border-b border-rose-500/10 shadow-md shadow-slate-200/60 transition-all duration-300">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <Link 
-            href="/" 
-            className="font-black text-xl tracking-wider text-slate-900 hover:opacity-80 transition-all duration-200 active:scale-95 flex items-center gap-1 group"
-          >
+      {/* Header & Navbar Utama */}
+      <header className="sticky top-0 z-40 bg-[#F8F9FA]/80 backdrop-blur-md border-b border-slate-200/60">
+        <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+          
+          {/* Logo Brand */}
+          <Link href="/" className="text-xl font-black tracking-tighter text-slate-900 flex items-center gap-1 group">
             <span>CPS</span>
-            <span className="w-2 h-2 rounded-full bg-rose-600 group-hover:scale-150 transition-transform"></span>
+            <span className="w-2 h-2 rounded-full bg-rose-600 group-hover:scale-125 transition-transform"></span>
           </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex space-x-1 sm:space-x-2">
+          {/* Navigasi Desktop */}
+          <nav className="hidden md:flex items-center space-x-1 sm:space-x-2">
             {navItems.map((item) => {
               const isActive = pathname === item.path;
               return (
                 <Link
                   key={item.name}
                   href={item.path}
-                  className={`text-xs sm:text-sm font-bold tracking-wider px-3.5 py-1.5 rounded-full transition-all duration-200 active:scale-95 ${
+                  className={`text-xs font-bold px-4 py-2 rounded-full transition-all duration-200 ${
                     isActive
-                      ? 'bg-rose-600 text-white shadow-md shadow-rose-600/30'
-                      : 'text-slate-600 hover:text-rose-600 hover:bg-rose-50/80'
+                      ? 'bg-rose-600 text-white shadow-md shadow-rose-600/25'
+                      : 'text-slate-600 hover:text-rose-600 hover:bg-rose-50/50'
                   }`}
                 >
                   {item.name}
                 </Link>
               );
             })}
+
+            {/* Tombol Pemicu Terminal Spider-Man */}
+            <button
+              onClick={() => setIsTerminalOpen(true)}
+              className="ml-3 bg-slate-900 hover:bg-rose-600 text-rose-400 hover:text-white font-mono text-xs font-bold px-3.5 py-2 rounded-xl transition-all duration-200 active:scale-95 flex items-center gap-1.5 shadow-sm border border-slate-800 cursor-pointer"
+              title="Open Peter's Tech Lab Terminal"
+            >
+              <span>[&gt;_]</span>
+            </button>
           </nav>
 
-          {/* Mobile Hamburger Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-xl text-slate-800 hover:text-rose-600 hover:bg-rose-50 focus:outline-none transition-colors"
-            aria-label="Toggle Navigation Menu"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {isMobileMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
+          {/* Tombol Mobile Toggle */}
+          <div className="flex items-center gap-2 md:hidden">
+            <button
+              onClick={() => setIsTerminalOpen(true)}
+              className="bg-slate-900 text-rose-400 font-mono text-xs font-bold px-3 py-2 rounded-xl border border-slate-800"
+            >
+              [&gt;_]
+            </button>
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 text-slate-800 focus:outline-none"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d={isMobileMenuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'}
+                />
+              </svg>
+            </button>
+          </div>
+
         </div>
 
-        {/* Drawer Menu Mobile */}
+        {/* Menu Navigasi Mobile Dropdown */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-white/95 backdrop-blur-2xl border-b border-rose-100 px-6 py-4 shadow-xl animate-in fade-in slide-in-from-top-4 duration-200">
-            <nav className="flex flex-col space-y-2">
-              {navItems.map((item) => {
-                const isActive = pathname === item.path;
-                return (
-                  <Link
-                    key={item.name}
-                    href={item.path}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={`text-xs font-bold tracking-wider px-4 py-3 rounded-xl transition-all ${
-                      isActive
-                        ? 'bg-rose-600 text-white shadow-md shadow-rose-600/30'
-                        : 'text-slate-700 hover:bg-rose-50 hover:text-rose-600'
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
-                );
-              })}
-            </nav>
+          <div className="md:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-2 animate-in slide-in-from-top-2 duration-200">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.path}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`block text-xs font-bold px-4 py-3 rounded-xl ${
+                  pathname === item.path ? 'bg-rose-600 text-white' : 'text-slate-700 hover:bg-slate-50'
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
           </div>
         )}
       </header>
 
-      {/* Content Area */}
-      <div className="flex-grow pt-28 pb-12 animate-page-entry">
-        {children}
-      </div>
+      {/* Konten Halaman */}
+      <div className="flex-1">{children}</div>
 
-      {/* Footer Global */}
-      <footer className="border-t border-slate-200/60 py-8 text-center text-xs font-semibold text-slate-400 bg-white/40 backdrop-blur-sm mt-auto">
-        &copy; {new Date().getFullYear()} Choqy Pananda Sirait.
-      </footer>
-    </>
+      {/* Modal Terminal Spider-Man */}
+      <SpiderTerminal isOpen={isTerminalOpen} onClose={() => setIsTerminalOpen(false)} />
+
+    </div>
   );
 }
