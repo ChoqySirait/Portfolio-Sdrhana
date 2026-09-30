@@ -2,10 +2,12 @@
 
 import React, { useRef } from 'react';
 import ScrollReveal from '../components/ScrollReveal';
+import TiltCard from '../components/TiltCard';
 
 export default function ResumePage() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
+  // Blok kode ini untuk navigasi tombol swipe pada halaman resume
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
       const scrollAmount = direction === 'left' ? -380 : 380;
@@ -40,7 +42,7 @@ export default function ResumePage() {
       role: "Active Member of Del Data Science",
       organization: "Student Activity Unit",
       institution: "Del Institute of Technology",
-      description: "Studying Python and database"
+      description: "Studying Python, database structures, and data analysis fundamentals."
     }
   ];
 
@@ -78,20 +80,20 @@ export default function ResumePage() {
           </div>
         </div>
 
-        {/* Petunjuk Swipe Khusus Mobile */}
+        {/* Petunjuk Swipe Mobile */}
         <p className="sm:hidden text-[11px] font-semibold text-rose-600 mb-4 flex items-center gap-1.5 animate-pulse">
           <span>Swipe timeline to explore more</span>
         </p>
       </ScrollReveal>
 
-      {/* Carousel Container */}
+      {/* Carousel Container dengan 3D TiltCard */}
       <ScrollReveal delayClass="delay-100">
         <div 
           ref={scrollContainerRef}
           className="flex space-x-6 overflow-x-auto pb-8 pt-2 no-scrollbar snap-x snap-mandatory"
         >
           {experiences.map((exp, index) => (
-            <div 
+            <TiltCard 
               key={index}
               className="flex-none w-[310px] sm:w-[370px] snap-start bg-white/90 backdrop-blur-md p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-rose-300 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
             >
@@ -120,7 +122,7 @@ export default function ResumePage() {
                 </span>
                 <span className="w-2 h-2 rounded-full bg-rose-600"></span>
               </div>
-            </div>
+            </TiltCard>
           ))}
         </div>
       </ScrollReveal>
