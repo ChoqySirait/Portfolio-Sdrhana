@@ -3,7 +3,13 @@
 
 :root {
   --background: #F8F9FA;
-  --foreground: #0f172a;
+  --foreground: #020617;
+}
+
+/* Mode Gelap Variables */
+.dark {
+  --background: #090D1A;
+  --foreground: #FFFFFF;
 }
 
 body {
@@ -11,17 +17,26 @@ body {
   color: var(--foreground);
   font-family: 'Plus Jakarta Sans', sans-serif;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Pola Jaring Modern Halus untuk Background Halaman */
+/* Pola Grid Mesh Halus Mode Terang */
 .bg-web-grid {
   background-size: 36px 36px;
   background-image: 
-    linear-gradient(to right, rgba(225, 29, 72, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(225, 29, 72, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(225, 29, 72, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(225, 29, 72, 0.08) 1px, transparent 1px);
 }
 
-/* Hide Scrollbar untuk Carousel Swipe */
+/* Pola Grid Mesh Mode Gelap */
+.dark .bg-web-grid {
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, rgba(225, 29, 72, 0.16) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(225, 29, 72, 0.16) 1px, transparent 1px);
+}
+
+/* Hide Scrollbar */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -30,65 +45,49 @@ body {
   scrollbar-width: none;
 }
 
-/* Animasi Spider-Man Turun & Naik Kembali */
+/* Animasi Spider-Man Mengayun Pas (Presisi Tidak Terlalu Turun) */
 @keyframes spiderSwing {
   0% {
-    transform: translateY(-110%);
+    transform: translateY(-115%);
     opacity: 0;
   }
-  18% {
+  15% {
     opacity: 1;
   }
-  40% {
-    transform: translateY(-20%);
+  42% {
+    transform: translateY(-3%);
   }
-  60% {
-    transform: translateY(-50%);
+  58% {
+    transform: translateY(-12%);
   }
-  82% {
+  85% {
     opacity: 1;
   }
   100% {
-    transform: translateY(-110%);
+    transform: translateY(-115%);
     opacity: 0;
   }
 }
 
 .animate-spiderman {
-  animation: spiderSwing 7.5s ease-in-out infinite;
+  animation: spiderSwing 7.5s cubic-bezier(0.34, 1.2, 0.64, 1) infinite;
 }
 
-/* Animasi Pendar/Flicker Jaring Laba-Laba Random */
+/* Animasi Flicker Jaring Laba-Laba */
 @keyframes webFlicker {
   0%, 100% { opacity: 0.15; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(1.05); }
+  50% { opacity: 0.35; transform: scale(1.03); }
 }
 
 .animate-web-flicker {
   animation: webFlicker 6s ease-in-out infinite;
 }
 
-/* Animasi Masuk Halaman Mulus Container Utama */
-@keyframes pageEntry {
-  from { 
-    opacity: 0; 
-    transform: translateY(16px) scale(0.99); 
-  }
-  to { 
-    opacity: 1; 
-    transform: translateY(0) scale(1); 
-  }
-}
-
-.animate-page-entry {
-  animation: pageEntry 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* Animasi Fade-Up Halus & Lambat (Smooth 0.75s) */
+/* Animasi Fade-Up Smooth */
 @keyframes fadeInUpSlow {
   from {
     opacity: 0;
-    transform: translateY(28px);
+    transform: translateY(24px);
   }
   to {
     opacity: 1;
@@ -98,25 +97,23 @@ body {
 
 .animate-fade-up {
   opacity: 0;
-  animation: fadeInUpSlow 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeInUpSlow 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.delay-100 { animation-delay: 120ms; }
-.delay-200 { animation-delay: 240ms; }
-.delay-300 { animation-delay: 360ms; }
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
 
-/* Animasi Gelembung/Ripple saat Layar Diklik */
+/* Filter Penghilang Latar Belakang Putih Gambar */
+.remove-white-bg {
+  mix-blend-mode: multiply;
+  filter: contrast(108%);
+}
+
+/* Ripple Click Effect */
 @keyframes clickRipple {
-  0% {
-    width: 0px;
-    height: 0px;
-    opacity: 0.8;
-  }
-  100% {
-    width: 60px;
-    height: 60px;
-    opacity: 0;
-  }
+  0% { width: 0px; height: 0px; opacity: 0.8; }
+  100% { width: 60px; height: 60px; opacity: 0; }
 }
 
 .click-ripple {
@@ -130,7 +127,7 @@ body {
   animation: clickRipple 0.5s cubic-bezier(0, 0.2, 0.8, 1) forwards;
 }
 
-/* Bright Crimson Neon Glow pada Hover Nama */
+/* Neon Glow Effect */
 .glow-neon-bright {
   transition: all 0.3s ease;
 }

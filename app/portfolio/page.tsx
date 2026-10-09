@@ -23,7 +23,6 @@ export default function PortfolioPage() {
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  // Blok kode ini untuk mengontrol tombol geser horizontal carousel
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
       const scrollAmount = direction === 'left' ? -380 : 380;
@@ -127,41 +126,44 @@ export default function PortfolioPage() {
     },
   ];
 
-  // 3 Pilar Utama Konsolidasi
   const categories = ['All', 'Cybersecurity & AI', 'UI/UX & Product Design', 'Fullstack & Systems'];
 
-  // Blok kode ini untuk menyaring proyek berdasarkan filter kategori
   const filteredProjects = activeCategory === 'All' 
     ? myProjects 
     : myProjects.filter(p => p.category === activeCategory);
 
   return (
-    <main className="max-w-6xl mx-auto px-6 py-8">
+    <main className="max-w-6xl mx-auto px-6 py-8 relative">
+      <div className="absolute top-10 left-10 w-80 h-80 bg-rose-500/10 dark:bg-rose-600/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
       {/* Header Section */}
       <ScrollReveal>
         <div className="mb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
-            <div className="flex items-center space-x-3 mb-3">
-              <span className="w-8 h-0.5 bg-rose-600"></span>
-              <span className="text-xs font-bold uppercase tracking-widest text-rose-600 font-mono">
-                My Projects
+            <div className="inline-flex items-center gap-2 bg-rose-500/10 dark:bg-rose-500/20 border border-rose-500/30 px-3.5 py-1.5 rounded-full mb-3">
+              <span className="w-2 h-2 rounded-full bg-rose-600"></span>
+              <span className="text-[10px] font-black uppercase tracking-widest text-rose-700 dark:text-rose-400 font-mono">
+                [PROJECTS // SHOWCASE]
               </span>
             </div>
-            <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">Featured Projects</h1>
+
+            <h1 className="text-3xl sm:text-5xl font-black text-slate-950 dark:text-white tracking-tight">
+              Featured Projects
+            </h1>
           </div>
 
           {/* Tombol Swipe Carousel */}
           <div className="hidden sm:flex items-center space-x-3">
             <button 
               onClick={() => scroll('left')}
-              className="w-12 h-12 rounded-2xl bg-white/90 backdrop-blur-md border border-slate-200 hover:border-rose-600 text-slate-700 hover:text-rose-600 flex items-center justify-center transition-all duration-200 active:scale-90 shadow-md shadow-slate-200/50 hover:shadow-rose-600/20 cursor-pointer group"
+              className="w-12 h-12 rounded-2xl bg-white/90 dark:bg-slate-800/90 backdrop-blur-md border border-slate-300 dark:border-slate-700 hover:border-rose-600 text-slate-950 dark:text-slate-100 hover:text-rose-600 flex items-center justify-center transition-all duration-200 active:scale-90 shadow-md cursor-pointer group"
               aria-label="Previous Slide"
             >
               <svg className="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7"/></svg>
             </button>
             <button 
               onClick={() => scroll('right')}
-              className="w-12 h-12 rounded-2xl bg-white/90 backdrop-blur-md border border-slate-200 hover:border-rose-600 text-slate-700 hover:text-rose-600 flex items-center justify-center transition-all duration-200 active:scale-90 shadow-md shadow-slate-200/50 hover:shadow-rose-600/20 cursor-pointer group"
+              className="w-12 h-12 rounded-2xl bg-white/90 dark:bg-slate-800/90 backdrop-blur-md border border-slate-300 dark:border-slate-700 hover:border-rose-600 text-slate-950 dark:text-slate-100 hover:text-rose-600 flex items-center justify-center transition-all duration-200 active:scale-90 shadow-md cursor-pointer group"
               aria-label="Next Slide"
             >
               <svg className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7"/></svg>
@@ -169,16 +171,16 @@ export default function PortfolioPage() {
           </div>
         </div>
 
-        {/* Filter Kategori Proyek */}
+        {/* Filter Kategori */}
         <div className="flex flex-wrap gap-2 mb-6">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`text-xs font-bold px-4 py-2 rounded-xl border transition-all duration-200 cursor-pointer ${
+              className={`text-xs font-black px-4 py-2 rounded-xl border transition-all duration-200 cursor-pointer ${
                 activeCategory === cat
                   ? 'bg-rose-600 text-white border-rose-600 shadow-md shadow-rose-600/25'
-                  : 'bg-white/80 text-slate-600 border-slate-200 hover:border-rose-400 hover:text-rose-600'
+                  : 'bg-white/95 dark:bg-slate-800/90 text-slate-950 dark:text-slate-100 border-slate-300 dark:border-slate-700 hover:border-rose-500 hover:text-rose-600 dark:hover:text-rose-400'
               }`}
             >
               {cat}
@@ -187,7 +189,7 @@ export default function PortfolioPage() {
         </div>
 
         {/* Petunjuk Mobile */}
-        <p className="sm:hidden text-[11px] font-semibold text-rose-600 mb-4 flex items-center gap-1.5 animate-pulse">
+        <p className="sm:hidden text-[11px] font-extrabold text-rose-600 dark:text-rose-400 mb-4 flex items-center gap-1.5 animate-pulse">
           <span>Swipe cards to explore more</span>
         </p>
       </ScrollReveal>
@@ -201,31 +203,31 @@ export default function PortfolioPage() {
           {filteredProjects.map((project) => (
             <TiltCard 
               key={project.id} 
-              className="flex-none w-[310px] sm:w-[360px] snap-start bg-white/90 backdrop-blur-md rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-rose-300 transition-all duration-300 flex flex-col justify-between group"
+              className="flex-none w-[310px] sm:w-[360px] snap-start bg-white/95 dark:bg-slate-900/90 backdrop-blur-md rounded-3xl border border-slate-300 dark:border-slate-800 shadow-sm hover:shadow-xl hover:border-rose-400 dark:hover:border-rose-800 transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
-                <div className="h-48 w-full overflow-hidden relative bg-slate-100">
+                <div className="h-48 w-full overflow-hidden relative bg-slate-100 dark:bg-slate-800">
                   <img 
                     src={project.image} 
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <span className="absolute top-3 left-3 text-[10px] font-extrabold uppercase tracking-wider text-rose-600 bg-white/90 backdrop-blur-md px-3.5 py-1 rounded-full shadow-sm">
+                  <span className="absolute top-3 left-3 text-[10px] font-black uppercase tracking-wider text-rose-600 dark:text-rose-400 bg-white/95 dark:bg-slate-900/90 backdrop-blur-md px-3.5 py-1 rounded-full shadow-xs">
                     {project.category}
                   </span>
                 </div>
 
                 <div className="p-6">
-                  <h2 className="text-lg font-extrabold text-slate-900 mb-2 group-hover:text-rose-600 transition-colors line-clamp-2">
+                  <h2 className="text-lg font-black text-slate-950 dark:text-white mb-2 group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors line-clamp-2">
                     {project.title}
                   </h2>
-                  <p className="text-slate-600 text-xs sm:text-sm font-medium leading-relaxed mb-4 line-clamp-2">
+                  <p className="text-slate-800 dark:text-slate-200 text-xs sm:text-sm font-bold leading-relaxed mb-4 line-clamp-2">
                     {project.description}
                   </p>
                   
                   <div className="flex flex-wrap gap-1.5 mb-2">
                     {project.tags.map((tag, i) => (
-                      <span key={i} className="text-[10px] font-bold bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-mono">
+                      <span key={i} className="text-[10px] font-extrabold bg-slate-100 dark:bg-slate-800 text-slate-950 dark:text-slate-100 px-2.5 py-1 rounded-md font-mono">
                         #{tag}
                       </span>
                     ))}
@@ -233,11 +235,11 @@ export default function PortfolioPage() {
                 </div>
               </div>
 
-              <div className="p-6 pt-0 border-t border-slate-100/80 mt-2">
+              <div className="p-6 pt-0 border-t border-slate-200 dark:border-slate-800 mt-2">
                 <button
                   type="button"
                   onClick={() => setSelectedProject(project)}
-                  className="w-full mt-4 bg-slate-900 hover:bg-rose-600 text-white font-extrabold text-xs uppercase tracking-wider py-3.5 rounded-xl transition-all duration-200 active:scale-95 shadow-sm cursor-pointer"
+                  className="w-full mt-4 bg-slate-950 dark:bg-rose-600 hover:bg-rose-600 dark:hover:bg-rose-700 text-white font-black text-xs uppercase tracking-wider py-3.5 rounded-xl transition-all duration-200 active:scale-95 shadow-xs cursor-pointer"
                 >
                   View Details
                 </button>
@@ -249,9 +251,9 @@ export default function PortfolioPage() {
 
       {/* Modal Detail Proyek */}
       {selectedProject && (
-        <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-rose-100 animate-in fade-in zoom-in-95 duration-200">
-            <div className="h-56 w-full relative bg-slate-100">
+        <div className="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-white dark:bg-slate-900 rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-rose-200 dark:border-slate-800 animate-in fade-in zoom-in-95 duration-200">
+            <div className="h-56 w-full relative bg-slate-100 dark:bg-slate-800">
               <img 
                 src={selectedProject.image} 
                 alt={selectedProject.title} 
@@ -259,7 +261,7 @@ export default function PortfolioPage() {
               />
               <button 
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-4 right-4 bg-white/90 hover:bg-white text-slate-800 rounded-full w-9 h-9 flex items-center justify-center font-bold text-sm shadow-md transition-all active:scale-90 cursor-pointer"
+                className="absolute top-4 right-4 bg-white/90 dark:bg-slate-800/90 text-slate-950 dark:text-white rounded-full w-9 h-9 flex items-center justify-center font-black text-sm shadow-md transition-all active:scale-90 cursor-pointer"
                 aria-label="Close Modal"
               >
                 ✕
@@ -267,40 +269,40 @@ export default function PortfolioPage() {
             </div>
             
             <div className="p-6 sm:p-8 max-h-[65vh] overflow-y-auto">
-              <span className="text-[10px] font-extrabold uppercase tracking-wider text-rose-600 bg-rose-50 px-3 py-1 rounded-full font-mono">
+              <span className="text-[10px] font-black uppercase tracking-wider text-rose-600 dark:text-rose-400 bg-rose-50 dark:bg-slate-800 px-3 py-1 rounded-full font-mono">
                 {selectedProject.category}
               </span>
               
-              <h2 className="text-xl font-extrabold text-slate-900 mt-3 mb-3">
+              <h2 className="text-xl font-black text-slate-950 dark:text-white mt-3 mb-3">
                 {selectedProject.title}
               </h2>
               
-              <p className="text-slate-600 text-xs sm:text-sm font-medium leading-relaxed mb-4">
+              <p className="text-slate-800 dark:text-slate-200 text-xs sm:text-sm font-bold leading-relaxed mb-4">
                 {selectedProject.fullDetail}
               </p>
 
-              <div className="bg-rose-50/80 border border-rose-100 rounded-2xl p-4 mb-6">
-                <h4 className="text-[11px] font-bold text-rose-700 uppercase tracking-wider mb-1 font-mono">System Impact &amp; Solution:</h4>
-                <p className="text-xs text-slate-700 font-semibold leading-relaxed">
+              <div className="bg-rose-50/90 dark:bg-slate-800/80 border border-rose-200 dark:border-slate-700 rounded-2xl p-4 mb-6">
+                <h4 className="text-[11px] font-black text-rose-700 dark:text-rose-400 uppercase tracking-wider mb-1 font-mono">System Impact &amp; Solution:</h4>
+                <p className="text-xs text-slate-950 dark:text-slate-100 font-extrabold leading-relaxed">
                   {selectedProject.impact}
                 </p>
               </div>
 
               <div className="flex flex-wrap gap-1.5 mb-6">
                 {selectedProject.tags.map((tag, i) => (
-                  <span key={i} className="text-[10px] font-bold bg-slate-100 text-slate-700 px-3 py-1 rounded-md font-mono">
+                  <span key={i} className="text-[10px] font-extrabold bg-slate-100 dark:bg-slate-800 text-slate-950 dark:text-slate-100 px-3 py-1 rounded-md font-mono">
                     #{tag}
                   </span>
                 ))}
               </div>
 
-              <div className="flex gap-3 pt-3 border-t border-slate-100">
+              <div className="flex gap-3 pt-3 border-t border-slate-200 dark:border-slate-800">
                 {selectedProject.linkType === 'figma' && selectedProject.figmaUrl && (
                   <a
                     href={selectedProject.figmaUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 bg-rose-600 hover:bg-rose-700 text-white font-extrabold text-xs uppercase tracking-wider py-3.5 rounded-xl text-center transition-all active:scale-95 shadow-md shadow-rose-600/20"
+                    className="flex-1 bg-rose-600 hover:bg-rose-700 text-white font-black text-xs uppercase tracking-wider py-3.5 rounded-xl text-center transition-all active:scale-95 shadow-md shadow-rose-600/20"
                   >
                     Open Figma Prototype
                   </a>
@@ -311,21 +313,21 @@ export default function PortfolioPage() {
                     href={selectedProject.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-xs uppercase tracking-wider py-3.5 rounded-xl text-center transition-all active:scale-95"
+                    className="flex-1 bg-slate-950 dark:bg-rose-600 hover:bg-slate-800 dark:hover:bg-rose-700 text-white font-black text-xs uppercase tracking-wider py-3.5 rounded-xl text-center transition-all active:scale-95"
                   >
                     Open GitHub Repo
                   </a>
                 )}
 
                 {selectedProject.linkType === 'none' && (
-                  <span className="flex-1 bg-slate-100 text-slate-400 font-bold text-[11px] uppercase tracking-wider py-3.5 rounded-xl text-center border border-slate-200 select-none">
+                  <span className="flex-1 bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 font-extrabold text-[11px] uppercase tracking-wider py-3.5 rounded-xl text-center border border-slate-200 dark:border-slate-700 select-none">
                     Internal / In Development
                   </span>
                 )}
 
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="px-6 bg-slate-100 hover:bg-slate-200 text-slate-700 font-extrabold text-xs uppercase tracking-wider py-3.5 rounded-xl transition-all active:scale-95 cursor-pointer"
+                  className="px-6 bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-950 dark:text-slate-100 font-black text-xs uppercase tracking-wider py-3.5 rounded-xl transition-all active:scale-95 cursor-pointer"
                 >
                   Close
                 </button>
