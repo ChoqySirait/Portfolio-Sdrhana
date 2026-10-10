@@ -45,6 +45,10 @@ Personal web portfolio built with Next.js App Router, TypeScript, and Tailwind C
 ├── public/               # Static assets & icons
 └── README.md             # Project documentation
 
+```
+
+---
+
 
 ## 🔧 Local Development Setup
 Follow these steps to set up the project locally:
