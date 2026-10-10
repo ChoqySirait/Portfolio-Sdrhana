@@ -66,3 +66,25 @@ A high-performance, modern personal web portfolio engineered with Next.js App Ro
 │   └── page.tsx               # Landing Hero Section
 ├── public/                    # Assets (PNG, Icons, Audio, PDF Resume)
 └── README.md                  # Project Documentation
+```
+
+---
+
+## 👤 Author
+Choqy Pananda Sirait
+
+Information Systems Student at Del Institute of Technology (IT Del)
+
+Web Development • System Analysis • Cybersecurity Triage • UI/UX Design
+
+- 🌐 Portfolio: portfolio-sdrhana.vercel.app
+
+- 🐙 GitHub: @ChoqySirait
+
+- 💼 LinkedIn: Choqy Pananda Sirait
+
+- 📧 Email: choqypenandasirait@gmail.com
+
+Made with 🔴, 🔵, and 🕷️ Spider-Tech.
+
+Enjoy :D
