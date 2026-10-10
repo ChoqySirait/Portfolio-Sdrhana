@@ -1,32 +1,43 @@
-# 🕸️ Modern Simple Portfolio
+# 🕸️ Spider-Tech Lab // Personal Web Portfolio
 
 ![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css)
 ![Vercel](https://img.shields.io/badge/Vercel-Deployment-000000?style=for-the-badge&logo=vercel)
+![Status](https://img.shields.io/badge/Status-Active_Development-emerald?style=for-the-badge)
 
-Personal web portfolio built with Next.js App Router, TypeScript, and Tailwind CSS. Designed with a clean Spider-Man accent aesthetic, featuring high performance, interactive micro-interactions, and fully responsive layouts.
+A high-performance, modern personal web portfolio engineered with Next.js App Router, TypeScript, and Tailwind CSS. Built with a signature **Spider-Man & Symbiote Cyberpunk Aesthetic**, featuring interactive micro-interactions, an embedded tech terminal, dynamic theme switching, and smooth responsive layouts.
 
-🚀 **Live Demo:** [portfolio-sdrhana.vercel.app](https://portfolio-sdrhana.vercel.app) 
-
----
-
-## 📌 Key Features
-
-- 🎨 **Spider-Man Inspired Theme**: Sleek, modern grid aesthetic with subtle ambient red-blue glows and custom cursor ripple effects.
-- 📱 **Fully Responsive**: Optimized for desktop, tablet, and mobile displays using Tailwind CSS breakpoints.
-- ⚡ **Next.js App Router Architecture**: Built with Server Components for SEO metadata and Client Components for dynamic interactions.
-- 🛡️ **Clean Codebase**: Structured component architecture, TypeScript interfaces, and strict build validation.
+🚀 **Live Demo:** [portfolio-sdrhana.vercel.app](https://portfolio-sdrhana.vercel.app)
 
 ---
 
-## 🛠️ Tech Stack
+## 📌 Key Features & Micro-Interactions
 
-- **Framework**: [Next.js](https://nextjs.org/) (App Router)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Icons**: Lucide React / Custom SVG Assets
-- **Deployment**: [Vercel](https://vercel.com/) CI/CD Pipeline
+- 🔴🔵 **Classic vs. Symbiote Dual Theme Switcher**: 
+  - **Classic Suit Mode**: Vibrant Red Crimson & Royal Navy theme with custom Spider-Grid background.
+  - **Symbiote Dark Mode**: Deep Monochrome Obsidian & Silver theme with instant asset switching (`Spiderman.png` $\rightarrow$ `BlackSpider.png`).
+- 🖥️ **Peter's Tech Lab Terminal (`[&gt;_]`)**: 
+  - Interactive modal terminal capable of executing custom commands (`help`, `skills`, `projects`, `contact`, `clear`) with synthetic audio feedback.
+- ⚡ **Zero-CLS Typewriter Animations**:
+  - **TypewriterLoop**: Infinite typewriter sequence on the Hero title with strict height locking to prevent layout shifts on mobile.
+  - **TypewriterTitle**: Single-pass typewriter header animation on all internal sub-pages.
+- 🕷️ **Spider-Sense Trailing Ring Cursor**:
+  - Custom trailing interactive cursor ring mimicking Spider-Sense alerts on mouse movement and click ripples.
+- 🖼️ **Radial Masking Image Integration**:
+  - Custom CSS radial masking (`spider-mask-radial`) ensuring 100% seamless transparency and zero background box artifacts on character assets.
+- 📱 **Fully Responsive Carousel & Modals**:
+  - Touch-friendly horizontal swipe carousels for Portfolio showcase and Experience timeline, supplemented with high-detail project modal views.
+
+---
+
+## 🛠️ Tech Stack & Architecture
+
+- **Core Framework**: [Next.js 15](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/) (Strict Typing)
+- **Styling & Design**: [Tailwind CSS](https://tailwindcss.com/) with CSS Custom Variables & Webkit Blending
+- **Component Architecture**: Client-Side Shell Architecture (`ClientShell`), Custom Hooks for Theme Management, and Modular UI Cards
+- **Deployment & CI/CD**: [Vercel](https://vercel.com/) Auto-Deployment Engine
 
 ---
 
@@ -34,46 +45,24 @@ Personal web portfolio built with Next.js App Router, TypeScript, and Tailwind C
 
 ```text
 ├── app/
-│   ├── components/       # Reusable UI components & ClientShell
-│   ├── about/            # About me page route
-│   ├── portfolio/        # Project showcase route
-│   ├── resume/           # Resume & experience route
-│   ├── contact/          # Contact form route
-│   ├── globals.css       # Global styles & Tailwind configuration
-│   ├── layout.tsx        # Root layout & Metadata configuration
-│   └── page.tsx          # Landing page (Home)
-├── public/               # Static assets & icons
-└── README.md             # Project documentation
-
-```
-
----
-
-
-## 🔧 Local Development Setup
-Follow these steps to set up the project locally:
-
-1.Clone the repository:
-    git clone [https://github.com/ChoqySirait/Portfolio-Sdrhana.git](https://github.com/ChoqySirait/Portfolio-Sdrhana.git) 
-
-2.Install dependencies: 
-    npm install
-
-3.Run the development server:
-    npm run dev
-
-4.Open in browser:
-    Navigate to http://localhost:3000 to view the site.
-
-    👤 Author : Choqy Pananda Sirait
-
-    ---
-
-### Simpan & Push ke GitHub:
-
-Jalankan perintah ini di Terminal VS Code:
-
-```powershell
-git add README.md
-git commit -m "Add professional README documentation"
-git push origin main
+│   ├── components/            # Modular & Reusable UI Components
+│   │   ├── ClientShell.tsx    # Root interactive wrapper & cursor ring
+│   │   ├── SectionBadge.tsx   # Unified Cyberpunk Red Badge Component
+│   │   ├── ScrollReveal.tsx   # On-scroll reveal animation wrapper
+│   │   ├── SpiderImage.tsx    # Client-safe dark/light theme image renderer
+│   │   ├── SpiderTerminal.tsx # Peter's Tech Lab terminal engine
+│   │   ├── TiltCard.tsx       # Interactive 3D tilt hover effect card
+│   │   ├── TypewriterLoop.tsx # Infinite hero name typewriter engine
+│   │   └── TypewriterTitle.tsx# Single-pass page header typewriter
+│   ├── context/
+│   │   └── ThemeContext.tsx   # React Context for Classic/Symbiote switching
+│   ├── about/                 # Background, Education & Skill Matrix
+│   ├── portfolio/             # Featured Projects Carousel & Modal View
+│   ├── resume/                # Experience & Leadership Timeline
+│   ├── certifications/        # Credentials, Badges & Verification Links
+│   ├── contact/               # Interactive Form & Direct Collaboration Card
+│   ├── globals.css            # Custom CSS Animations, Blending & Grid Themes
+│   ├── layout.tsx             # Root layout & SEO Metadata
+│   └── page.tsx               # Landing Hero Section
+├── public/                    # Assets (PNG, Icons, Audio, PDF Resume)
+└── README.md                  # Project Documentation
