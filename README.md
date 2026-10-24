@@ -89,3 +89,5 @@ Made with 🔴, 🔵, and 🕷️ Spider-Tech.
 
 Enjoy :D
 Update Soon ! My Laptop Broken :)
+
+Today : I buy New Laptop,LETSGOO!
