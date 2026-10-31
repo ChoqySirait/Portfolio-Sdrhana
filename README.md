@@ -6,28 +6,28 @@
 ![Vercel](https://img.shields.io/badge/Vercel-Deployment-000000?style=for-the-badge&logo=vercel)
 ![Status](https://img.shields.io/badge/Status-Active_Development-emerald?style=for-the-badge)
 
-A high-performance, modern personal web portfolio engineered with Next.js App Router, TypeScript, and Tailwind CSS. Built with a signature **Spider-Man & Symbiote Cyberpunk Aesthetic**, featuring interactive micro-interactions, an embedded tech terminal, dynamic theme switching, and smooth responsive layouts.
+A high-performance, modern personal web portfolio engineered with Next.js App Router, TypeScript, and Tailwind CSS. Built with a signature **Spider-Man & Symbiote Cyberpunk Aesthetic**, featuring interactive micro-interactions, an embedded tech terminal, dynamic theme switching, and strict UI/UX consistency.
 
 🚀 **Live Demo:** [portfolio-sdrhana.vercel.app](https://portfolio-sdrhana.vercel.app)
 
 ---
 
-## 📌 Key Features & Micro-Interactions
+## 📌 Key Features & Engineering Highlights
 
 - 🔴🔵 **Classic vs. Symbiote Dual Theme Switcher**: 
   - **Classic Suit Mode**: Vibrant Red Crimson & Royal Navy theme with custom Spider-Grid background.
-  - **Symbiote Dark Mode**: Deep Monochrome Obsidian & Silver theme with instant asset switching (`Spiderman.png` $\rightarrow$ `BlackSpider.png`).
-- 🖥️ **Peter's Tech Lab Terminal (`[&gt;_]`)**: 
-  - Interactive modal terminal capable of executing custom commands (`help`, `skills`, `projects`, `contact`, `clear`) with synthetic audio feedback.
+  - **Symbiote Dark Mode**: Deep Monochrome Obsidian & Silver theme. Uses a custom `SpiderImage` component to guarantee **100% Client-Safe Hydration** without layout glitches during asset switching (`Spiderman.png` -> `BlackSpider.png`).
+- 📏 **100vh Viewport Optimization (Zero-Scroll Hero)**:
+  - Compact typography scaling and precision padding ensure the Hero Section fits flawlessly within a single desktop screen without triggering vertical scrollbars.
 - ⚡ **Zero-CLS Typewriter Animations**:
-  - **TypewriterLoop**: Infinite typewriter sequence on the Hero title with strict height locking to prevent layout shifts on mobile.
-  - **TypewriterTitle**: Single-pass typewriter header animation on all internal sub-pages.
+  - **TypewriterLoop**: Infinite typewriter sequence on the Hero title with strict height locking (`min-h`) to prevent Cumulative Layout Shifts (CLS) on mobile.
+  - **TypewriterTitle**: Single-pass typewriter header animation on all internal sub-pages for a clean, non-distracting reading experience.
+- 🎨 **Unified Component Architecture**:
+  - Global implementation of `SectionBadge` (Cyberpunk Pulsing Dot) and `TiltCard` (Crimson-Obsidian Dark Gradient) for 100% design consistency across all routes. Solid crimson CTA buttons with glowing drop-shadows.
+- 🖥️ **Peter's Tech Lab Terminal (`[>_]`)**: 
+  - Interactive modal terminal capable of executing custom commands (`help`, `skills`, `projects`, `contact`, `clear`) with synthetic audio feedback.
 - 🕷️ **Spider-Sense Trailing Ring Cursor**:
   - Custom trailing interactive cursor ring mimicking Spider-Sense alerts on mouse movement and click ripples.
-- 🖼️ **Radial Masking Image Integration**:
-  - Custom CSS radial masking (`spider-mask-radial`) ensuring 100% seamless transparency and zero background box artifacts on character assets.
-- 📱 **Fully Responsive Carousel & Modals**:
-  - Touch-friendly horizontal swipe carousels for Portfolio showcase and Experience timeline, supplemented with high-detail project modal views.
 
 ---
 
@@ -63,31 +63,11 @@ A high-performance, modern personal web portfolio engineered with Next.js App Ro
 │   ├── contact/               # Interactive Form & Direct Collaboration Card
 │   ├── globals.css            # Custom CSS Animations, Blending & Grid Themes
 │   ├── layout.tsx             # Root layout & SEO Metadata
-│   └── page.tsx               # Landing Hero Section
+│   └── page.tsx               # Landing Hero Section (100vh Optimized)
 ├── public/                    # Assets (PNG, Icons, Audio, PDF Resume)
 └── README.md                  # Project Documentation
+
 ```
-
 ---
-
 ## 👤 Author
-Choqy Pananda Sirait
-
-Information Systems Student at Del Institute of Technology (IT Del)
-
-Web Development • System Analysis • Cybersecurity Triage • UI/UX Design
-
-- 🌐 Portfolio: portfolio-sdrhana.vercel.app
-
-- 🐙 GitHub: @ChoqySirait
-
-- 💼 LinkedIn: Choqy Pananda Sirait
-
-- 📧 Email: choqypenandasirait@gmail.com
-
-Made with 🔴, 🔵, and 🕷️ Spider-Tech.
-
-Enjoy :D
-Update Soon ! My Laptop Broken :)
-
-Today : I buy New Laptop,LETSGOO!
+### Choqy Pananda Sirait
